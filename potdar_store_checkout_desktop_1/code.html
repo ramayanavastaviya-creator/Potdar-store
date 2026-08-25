@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - Potdar Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e3e1ec",
+                        "outline": "#737688",
+                        "surface-dim": "#dad9e3",
+                        "primary": "#003ec7",
+                        "secondary-container": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed": "#001452",
+                        "on-secondary-container": "#656464",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-tertiary-container": "#e4e5e5",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-tint": "#004ced",
+                        "background": "#fbf8ff",
+                        "inverse-on-surface": "#f1effa",
+                        "secondary": "#5f5e5e",
+                        "tertiary": "#4c4e4f",
+                        "surface-container": "#eeedf7",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf8ff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "on-primary-container": "#dfe3ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c3c5d9",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1b22",
+                        "surface-container-highest": "#e3e1ec",
+                        "primary-fixed": "#dde1ff",
+                        "on-background": "#1a1b22",
+                        "surface-container-low": "#f4f2fd",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#0052ff",
+                        "tertiary-container": "#656666",
+                        "on-surface-variant": "#434656"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-sm": "8px",
+                        "margin-desktop": "64px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="radio"]:checked {
+            border-color: #0052ff;
+            background-color: #0052ff;
+        }
+        input[type="text"]:focus, input[type="tel"]:focus, textarea:focus {
+            outline: none;
+            border-width: 2px;
+            border-color: #0052ff;
+            padding-left: 15px; /* Adjust for border width change to avoid jumping */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar (Suppressed for Transactional Intent - Checkout) -->
+<header class="bg-surface border-b border-outline-variant h-20 flex items-center px-margin-desktop sticky top-0 z-50">
+<div class="max-w-container-max mx-auto w-full flex justify-between items-center">
+<div class="font-display-lg text-[24px] leading-[32px] font-bold text-primary">Potdar Store</div>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 hover:underline" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+                Return to Cart
+            </a>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-unit-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-unit-lg">Checkout</h1>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Multi-stage Form -->
+<div class="md:col-span-8 flex flex-col gap-unit-lg">
+<!-- 1. Address Section -->
+<section class="bg-surface rounded-xl border border-outline-variant p-unit-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-container text-on-primary font-bold">1</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Address</h2>
+</div>
+<!-- Saved Addresses Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md mb-8">
+<label class="relative block cursor-pointer">
+<input checked="" class="peer sr-only" name="address" type="radio" value="home"/>
+<div class="border border-outline-variant rounded-lg p-unit-md hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low h-full">
+<div class="flex justify-between items-start mb-2">
+<div class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">home</span>
+                                        Home
+                                    </div>
+<span class="material-symbols-outlined text-primary text-[20px] opacity-0 peer-checked:opacity-100 fill">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">123 Market Street, Apt 4B<br/>Mumbai, Maharashtra 400001<br/>+91 98765 43210</p>
+</div>
+</label>
+<label class="relative block cursor-pointer">
+<input class="peer sr-only" name="address" type="radio" value="work"/>
+<div class="border border-outline-variant rounded-lg p-unit-md hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low h-full">
+<div class="flex justify-between items-start mb-2">
+<div class="font-label-md text-label-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">work</span>
+                                        Work
+                                    </div>
+<span class="material-symbols-outlined text-primary text-[20px] opacity-0 peer-checked:opacity-100 fill">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">45 Tech Park, Tower A<br/>Mumbai, Maharashtra 400013<br/>+91 98765 43210</p>
+</div>
+</label>
+</div>
+<!-- Add New Address Toggle (Visual Only) -->
+<button class="font-label-md text-label-md text-primary flex items-center gap-2 hover:underline" type="button">
+<span class="material-symbols-outlined">add</span>
+                        Add new address
+                    </button>
+</section>
+<!-- 2. Delivery Options -->
+<section class="bg-surface rounded-xl border border-outline-variant p-unit-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="flex items-center justify-center w-8 h-8 rounded-full border border-outline text-outline font-bold">2</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Time</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-md">
+<label class="relative block cursor-pointer">
+<input checked="" class="peer sr-only" name="delivery_time" type="radio" value="asap"/>
+<div class="border border-outline-variant rounded-lg p-unit-md hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low flex flex-col items-center justify-center text-center h-32">
+<span class="material-symbols-outlined text-3xl mb-2 text-on-surface peer-checked:text-primary">bolt</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">ASAP Delivery</div>
+<div class="font-body-md text-sm text-on-surface-variant">30–60 minutes</div>
+</div>
+</label>
+<label class="relative block cursor-pointer">
+<input class="peer sr-only" name="delivery_time" type="radio" value="scheduled"/>
+<div class="border border-outline-variant rounded-lg p-unit-md hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low flex flex-col items-center justify-center text-center h-32">
+<span class="material-symbols-outlined text-3xl mb-2 text-on-surface peer-checked:text-primary">calendar_month</span>
+<div class="font-label-md text-label-md text-on-surface font-bold">Schedule Later</div>
+<div class="font-body-md text-sm text-on-surface-variant">Choose a slot</div>
+</div>
+</label>
+</div>
+</section>
+<!-- 3. Payment Section -->
+<section class="bg-surface rounded-xl border border-outline-variant p-unit-lg">
+<div class="flex items-center gap-3 mb-6">
+<span class="flex items-center justify-center w-8 h-8 rounded-full border border-outline text-outline font-bold">3</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Payment Method</h2>
+</div>
+<div class="flex flex-col gap-4">
+<label class="relative block cursor-pointer">
+<input checked="" class="peer sr-only" name="payment" type="radio" value="upi"/>
+<div class="border border-outline-variant rounded-lg p-unit-md flex items-center justify-between hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">qr_code_scanner</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">UPI</div>
+<div class="text-sm text-on-surface-variant">Google Pay, PhonePe, Paytm</div>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-[6px] peer-checked:border-primary transition-all"></div>
+</div>
+</label>
+<label class="relative block cursor-pointer">
+<input class="peer sr-only" name="payment" type="radio" value="card"/>
+<div class="border border-outline-variant rounded-lg p-unit-md flex items-center justify-between hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Credit / Debit Card</div>
+<div class="text-sm text-on-surface-variant">Visa, Mastercard, RuPay</div>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-[6px] peer-checked:border-primary transition-all"></div>
+</div>
+</label>
+<label class="relative block cursor-pointer">
+<input class="peer sr-only" name="payment" type="radio" value="cod"/>
+<div class="border border-outline-variant rounded-lg p-unit-md flex items-center justify-between hover:border-primary transition-colors peer-checked:border-primary peer-checked:border-2 peer-checked:bg-surface-container-low">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">payments</span>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Cash on Delivery</div>
+<div class="text-sm text-on-surface-variant">Pay when you receive the order</div>
+</div>
+</div>
+<div class="w-5 h-5 rounded-full border-2 border-outline peer-checked:border-[6px] peer-checked:border-primary transition-all"></div>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<aside class="md:col-span-4 sticky top-28">
+<div class="bg-surface rounded-xl border border-outline-variant p-unit-lg shadow-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant pb-4">Order Summary</h2>
+<!-- Items Preview -->
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-md flex-shrink-0" data-alt="A small, stylized icon of fresh organic bananas on a light gray background, highlighting fresh produce. Clean, minimalist grocery e-commerce aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiVccApsRaEQFTZm6ngV6tDIyATQyRYaR0voZFqOkhDGXVaPfhprP1Pz55sZr-df6o9KCK2aG6AqqgKOLDxwAYaF1cUzZwccWwa2NXCgYavrKwaTCVhoYI11MXCj792JSzTNc31ACf8ZtYwbFUZCT6wd_2IkTb9qNFoQp70pgoJD-Q1OQd3gA3eTlqmXktsANhQsW3cGR_jJFlyrVwBPfRfTxcdL2orHWzZV-XDHdScggML-PQGej5Dg')"></div>
+<div>
+<div class="font-label-md text-label-md text-on-surface line-clamp-1">Organic Bananas (1 Dozen)</div>
+<div class="text-sm text-on-surface-variant">Qty: 1</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface whitespace-nowrap">₹ 120</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-12 h-12 bg-surface-container rounded-md flex-shrink-0" data-alt="A small, stylized icon of a loaf of whole wheat artisan bread on a light gray background, representing bakery items. Clean, minimalist grocery e-commerce aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4GlvVyyuPkTnqNlulE0h9XH34aPWZEVOyc5suE-OfS0f5QQoUSIw1m4HM-5QdgHCuEIH4eRuASgfmTP5oU_qfJ740DN6okL1VbKwmgUPLA1CHUJ2VUHlQyqi_5FlKwmozFUgBHFmDDk_Y-qI9zBB6jsxPVTw-o157BlhMRn09x-Ps1aH1NK7X5ckEfjjSqddNsLV0V9KqgZk_VyyX7if0BhCpveNoetWgAIz-ZxYWTNS-LxYPNGcPHg')"></div>
+<div>
+<div class="font-label-md text-label-md text-on-surface line-clamp-1">Whole Wheat Bread</div>
+<div class="text-sm text-on-surface-variant">Qty: 2</div>
+</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface whitespace-nowrap">₹ 110</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-4 mb-6">
+<div class="flex justify-between items-center mb-2">
+<div class="font-body-md text-body-md text-on-surface-variant">Subtotal</div>
+<div class="font-body-md text-body-md text-on-surface">₹ 230</div>
+</div>
+<div class="flex justify-between items-center mb-2">
+<div class="font-body-md text-body-md text-on-surface-variant">Delivery Fee</div>
+<div class="font-body-md text-body-md text-on-surface">₹ 40</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="font-body-md text-body-md text-on-surface-variant">Taxes</div>
+<div class="font-body-md text-body-md text-on-surface">₹ 12</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-4 mb-8">
+<div class="flex justify-between items-center">
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Total</div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold">₹ 282</div>
+</div>
+</div>
+<button class="w-full bg-[#0052FF] text-white font-label-md text-label-md py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-on-primary-fixed-variant transition-colors">
+                        Place Order
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant mt-4 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                        Secure Checkout
+                    </p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer (Suppressed for Transactional Intent) -->
+</body></html>

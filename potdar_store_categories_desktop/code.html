@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store - Categories</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#656666",
+                        "secondary-container": "#e5e2e1",
+                        "primary-container": "#0052ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#434656",
+                        "inverse-primary": "#b7c4ff",
+                        "inverse-surface": "#2f3038",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-bright": "#fbf8ff",
+                        "on-surface": "#1a1b22",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#4c4e4f",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-container": "#dfe3ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "on-background": "#1a1b22",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "surface": "#fbf8ff",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#eeedf7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-highest": "#e3e1ec",
+                        "surface-container-high": "#e8e7f1",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#656464",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-variant": "#e3e1ec",
+                        "on-primary-fixed": "#001452",
+                        "outline-variant": "#c3c5d9",
+                        "surface-container-low": "#f4f2fd",
+                        "on-tertiary-container": "#e4e5e5",
+                        "secondary": "#5f5e5e",
+                        "on-primary": "#ffffff",
+                        "primary": "#003ec7",
+                        "surface-dim": "#dad9e3",
+                        "outline": "#737688",
+                        "inverse-on-surface": "#f1effa",
+                        "surface-tint": "#004ced",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "unit-lg": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-unit-lg">
+<a class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed hover:opacity-80 transition-all duration-200" href="#">
+                Potdar Store
+            </a>
+<!-- Search Bar (on_left) -->
+<div class="hidden lg:flex items-center relative w-64 ml-4">
+<span class="material-symbols-outlined absolute left-3 text-secondary" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Search products..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-unit-lg">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md" href="#">Grocery</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md" href="#">Snacks</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md" href="#">Beverages</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md" href="#">Dairy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md" href="#">Bakery</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-unit-md">
+<button class="p-2 text-secondary hover:text-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button class="hidden sm:flex items-center gap-2 text-secondary hover:text-primary transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined" data-icon="person">person</span> Account
+            </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-4 py-2 rounded-full font-label-md text-label-md hover:bg-primary-fixed-dim hover:text-on-primary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span> Cart
+            </button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl">
+<!-- Header Section -->
+<div class="mb-unit-xl text-center md:text-left">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-unit-sm">Categories</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Explore our curated selection of premium groceries, daily essentials, and specialty items, carefully sourced for your home.</p>
+</div>
+<!-- Categories Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Category 1: Grocery & Staples (Large Feature) -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square md:col-span-2 lg:col-span-2 hover:border-primary transition-colors duration-300 flex flex-col justify-end p-unit-lg" href="#">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully arranged spread of premium dry groceries. Glass jars filled with high-quality lentils, rice, artisan pasta, and whole spices sit on a pristine marble countertop. Soft, natural morning light creates a clean, bright, high-end retail aesthetic. Minimalist styling with lots of white space and subtle shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDfTIF5D9fYTUwrOD7lI5eS0DacfLNHkMRMi5P2t_XBtVD2bLh3r_I9gKJ-10OwWCEvkK10-e4N8jCZImcBX5ktyAE92Z3JcZdkrRa5znXNHmgnlSQ0kQ9OwvvirD-lnkHvLX3AvU1TRk5gmYzOK7yEXvxkZjywivXozP_nMXi4bDvJLHGJcdsBp4Ld-td6Xyoxln9SYjjEejuidIRPBz6pO-t90qnCmXly01DcoD-6REDBwmreHrDP0g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="relative z-10 text-on-primary">
+<h2 class="font-headline-lg text-headline-lg mb-unit-xs">Grocery &amp; Staples</h2>
+<p class="font-body-md text-body-md opacity-90 flex items-center gap-1 group-hover:gap-2 transition-all">Shop Essentials <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></p>
+</div>
+</a>
+<!-- Category 2: Snacks & Namkeen -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square hover:border-primary transition-colors duration-300" href="#">
+<div class="absolute inset-0 z-0 h-3/4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A curated selection of premium Indian snacks and namkeen arranged artfully in modern ceramic bowls on a light oak wooden table. Bright, crisp studio lighting highlighting the textures of the snacks. Clean, contemporary aesthetic with a soft white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCovwcO9Y0G6hbMIh1WqEaR8zlM5KKyXsM2YBd3Oe9dO5A0rm4Hxs6EiRoVGUYpi3NM-ZlXH6b7AzIWE4dGFrwjijlfOG7YQ0KS2VOQ49CGvsigKQNa9ZPeezwmhCRW-5TNDIErxzZKD50tZHMW1886Nj9iniCE6eBj2T11jx9DbHiAlc9AHKGyiaXfXsKWgh0EopoqjKeab_-153r_Z-SP_Y4OetyCgccQQtRaEwQazeaE37GDWQTq-g')"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-unit-md bg-surface border-t border-outline-variant z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Snacks &amp; Namkeen</h3>
+<p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">View Items</p>
+</div>
+</a>
+<!-- Category 3: Beverages -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square hover:border-primary transition-colors duration-300" href="#">
+<div class="absolute inset-0 z-0 h-3/4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Chilled premium beverages including artisanal sodas, fresh pressed juices in clear glass bottles, and cold brew coffee. Condensation on the glass, set against a pristine white studio background with sharp, clean lighting. Refreshing, high-end commercial photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEyjyAm0YWUGWHdG-9_7eT3kJ6HsBYRBN341WDghMlsUSt7XwB4_s5SLPkepDNzKtZRfQrO69Nib1rx6ni_DqLssc-b3Jmh3of-KARC_bQ2EJ-VbrBT-xbnOTagOKQ2r-ZJtAV9ByXE1cVQI9FEpeJ8qMcWzAVxF7gGfWIz9QkCR5_9D5v1u33deNvxkKclyDDzD-qNx9HcpHsxHl9jaunZcewMl5va-Z0HbaE6JWuDcxYHZq8G3ENHw')"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-unit-md bg-surface border-t border-outline-variant z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Beverages</h3>
+<p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">View Items</p>
+</div>
+</a>
+<!-- Category 4: Dairy & Breakfast -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square hover:border-primary transition-colors duration-300" href="#">
+<div class="absolute inset-0 z-0 h-3/4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A fresh, bright breakfast scene featuring premium organic milk in a glass bottle, fresh eggs, artisan bread, and butter. Morning sunlight streaming across a white table, casting soft long shadows. Clean, wholesome, and premium culinary aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBCy343B1q6EoENI76Mf1acwq_fxB7P3lFdUWiBFyHDOo9pb6uWN698406ClrKToKzcFDqmb8UgcoQlBrYJqK_B3X6ySN_71aAw-MaHrgcsoBGT442bde15FP-hwGlz6s7j2iG-eIWe7ehZS9UG99_Kh9pRYdGk1X8Bw4idUXtmEWBBLmev8xnF4arjr3GBntLcgC1meAhvkRTI44MjyxwZ0aPMMcLr9H8MsKSZ0F7LhyfjCKKPLNZzsA')"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-unit-md bg-surface border-t border-outline-variant z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Dairy &amp; Breakfast</h3>
+<p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">View Items</p>
+</div>
+</a>
+<!-- Category 5: Packaged Food -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square hover:border-primary transition-colors duration-300" href="#">
+<div class="absolute inset-0 z-0 h-3/4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A neatly organized pantry shelf showing premium packaged foods, organic pasta boxes, gourmet sauces, and canned goods. The packaging is modern and minimalist. Even, bright lighting conveying a sense of order, quality, and premium retail experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9bjiopTueKlCHCt1aDLSJrNZWvxj5OIgOT-mNMLXAM25JNzHKc75g8TbWeHbsKKiEU0vz3Kd8YwwQCudq-7-lttCELWQWRtfiGQMNDRNFRKa4klXvuljNknYYQBAVawSKe-iL7YblJaZ-nC2mw7XiflTz1fo6rPLX3IzNdyDROqpqedPrsFNSVEW2WoEvVH1nGC9sad4ynPSBf64Z6BhrvEIHDaugRhhpyL5tFD_R9Xe5Qxt7KrUUUw')"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-unit-md bg-surface border-t border-outline-variant z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Packaged Food</h3>
+<p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">View Items</p>
+</div>
+</a>
+<!-- Category 6: Personal Care -->
+<a class="group relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low aspect-square hover:border-primary transition-colors duration-300" href="#">
+<div class="absolute inset-0 z-0 h-3/4">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist arrangement of high-end personal care products. Sleek bottles of lotion, shampoo, and artisanal soap on a subtle terrazzo slab against a soft white background. Spa-like, serene lighting emphasizing cleanliness and premium quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvJPWJNTuUAi4OJRRZxiCtXovKhwVMapPSDnvnMp4-2TEiKehN2zKLA-WmSMcr-qVKL__pCBIs0a6pQpydCBI7Fmk9FKvE2Padz6gs5pWp6ARGCcSJxCEzlsVXOlB3LmCobGWwKC2tN1VD6eixBCbeP-ozDQBBYmuE8XDMbUaCXw3uyNY0TcGq73IyNssYHnZAkNZa7rxGze7d6PNfkqUGP-Lv0e22765m4ryOMlm_Ll2omC0887Sb9Q')"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-unit-md bg-surface border-t border-outline-variant z-10">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Personal Care</h3>
+<p class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">View Items</p>
+</div>
+</a>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface dark:bg-background border-t border-outline-variant dark:border-outline fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-margin-mobile py-2 pb-safe">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:bg-surface-container-high w-16 scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary transition-colors w-16 relative" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Cart</span>
+<span class="absolute top-0 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-inverse-surface w-full py-unit-xl px-margin-mobile md:px-margin-desktop border-t border-outline-variant dark:border-outline mt-auto pb-24 md:pb-unit-xl">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter mb-unit-lg">
+<div class="md:col-span-1">
+<h2 class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface mb-unit-sm">Potdar Store</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-unit-md">Your premium neighborhood grocery destination.</p>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-unit-sm uppercase tracking-wider">Quick Links</h3>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Delivery Information</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-unit-sm uppercase tracking-wider">Legal</h3>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-unit-sm uppercase tracking-wider">Connect</h3>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Contact Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto border-t border-outline-variant pt-unit-md text-center md:text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Potdar Store. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

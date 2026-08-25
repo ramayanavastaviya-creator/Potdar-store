@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Admin - Offers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface-container-high": "#e8e7f1",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "tertiary-container": "#656666",
+                      "outline": "#737688",
+                      "primary": "#003ec7",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#b7c4ff",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#dfe3ff",
+                      "primary-container": "#0052ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e3e1ec",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "tertiary": "#4c4e4f",
+                      "primary-fixed": "#dde1ff",
+                      "surface-dim": "#dad9e3",
+                      "surface-container-low": "#f4f2fd",
+                      "surface-variant": "#e3e1ec",
+                      "secondary-container": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "surface-bright": "#fbf8ff",
+                      "inverse-on-surface": "#f1effa",
+                      "on-error": "#ffffff",
+                      "surface-container": "#eeedf7",
+                      "on-primary-fixed": "#001452",
+                      "on-tertiary-container": "#e4e5e5",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "secondary": "#5f5e5e",
+                      "on-surface-variant": "#434656",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "background": "#fbf8ff",
+                      "inverse-surface": "#2f3038",
+                      "on-surface": "#1a1b22",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#0038b6",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface": "#fbf8ff",
+                      "secondary-fixed": "#e5e2e1",
+                      "outline-variant": "#c3c5d9",
+                      "on-background": "#1a1b22",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#004ced",
+                      "on-secondary-container": "#656464",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-xl": "48px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "unit-md": "16px",
+                      "unit-xs": "4px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Inter"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col z-50 h-screen w-64 border-r border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-inverse-surface">
+<div class="px-6 py-6 border-b border-outline-variant dark:border-outline flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Potdar Store</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">Management Portal</span>
+</div>
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<!-- Active State: Offers -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-secondary-container opacity-90 scale-[0.99] transition-transform" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a store administrator, lit with bright studio lighting against a clean white background. Modern, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi6LkqM66IguuqrAGOwe5H9wHqYZwJtqjTjLjK-xp4FIHXAeICyCb0ADEw3YbcghoQ-Oc0WuxBDWo8ChAqanqHSrdUk5fwPZjspu5JN4PHwQABJM69IfBPx-_K22v49yesO5WT3kGYcnsXn-iN0_ZKywZ5vK2rgxMrVOQ5ADtDgl1ujtI0sY5UN9pgIOa65yUU03J-Z-hGB7o8vKRzpOA_4VhAGcw6qpJWQNYyJ_1KaD-FVgpi_H0ZlA"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Admin User</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">admin@potdar.com</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 flex justify-between items-center h-16 px-gutter ml-64 w-[calc(100%-16rem)] z-40 border-b border-outline-variant dark:border-outline bg-surface dark:bg-surface-dim">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md font-black text-on-surface dark:text-inverse-on-surface">Potdar Store Admin</span>
+</div>
+<div class="flex-1 flex justify-end items-center gap-6">
+<div class="relative w-64 md:w-80 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search across admin..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95 duration-100 flex items-center justify-center rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95 duration-100 flex items-center justify-center rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-95 duration-100 flex items-center justify-center rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 px-margin-desktop pb-margin-desktop min-h-screen">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-unit-lg gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Offers &amp; Promotions</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage discounts, coupons, and promotional campaigns.</p>
+</div>
+<button class="bg-primary-container text-on-primary h-12 px-6 rounded font-label-md text-label-md flex items-center gap-2 hover:opacity-90 transition-opacity whitespace-nowrap self-start md:self-auto">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                Create New Offer
+            </button>
+</div>
+<!-- Filters Bar -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 mb-unit-md flex flex-wrap gap-4 items-center">
+<!-- Search -->
+<div class="relative flex-grow min-w-[200px] max-w-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded text-body-md font-body-md text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all bg-surface" placeholder="Search offers by name or code..." type="text"/>
+</div>
+<!-- Status Filter -->
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none pl-4 pr-10 py-2 border border-outline-variant rounded text-body-md font-body-md text-on-surface bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+<option value="">All Statuses</option>
+<option value="active">Active</option>
+<option value="scheduled">Scheduled</option>
+<option value="paused">Paused</option>
+<option value="expired">Expired</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Type Filter -->
+<div class="relative min-w-[150px]">
+<select class="w-full appearance-none pl-4 pr-10 py-2 border border-outline-variant rounded text-body-md font-body-md text-on-surface bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none cursor-pointer">
+<option value="">All Types</option>
+<option value="product">Product Discount</option>
+<option value="category">Category Sale</option>
+<option value="coupon">Coupon Code</option>
+<option value="shipping">Free Shipping</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<!-- Date Range -->
+<div class="relative min-w-[220px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">calendar_today</span>
+<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded text-body-md font-body-md text-on-surface bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Filter by date range..." readonly="" type="text" value="Last 30 Days"/>
+</div>
+<button class="ml-auto text-primary font-label-md text-label-md hover:underline bg-transparent px-4 py-2 rounded border border-transparent hover:bg-primary-fixed transition-colors">
+                Clear Filters
+            </button>
+</div>
+<!-- Data Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container">
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Offer Details</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Type</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Applies To</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Value</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Validity</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: Active -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Summer Fresh Veggies</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5 font-mono bg-surface-variant px-1.5 py-0.5 rounded inline-block w-max">SUMMER20</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">sell</span>
+                                Category
+                            </span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface">Fresh Vegetables</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">20% OFF</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface text-sm">Oct 1 - Oct 31, 2023</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">Ends in 5 days</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-primary text-primary font-label-sm text-label-sm bg-primary-fixed bg-opacity-20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Active
+                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error rounded hover:bg-error-container transition-colors" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Scheduled -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Diwali Mega Sale</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5 font-mono bg-surface-variant px-1.5 py-0.5 rounded inline-block w-max">DIWALI500</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">confirmation_number</span>
+                                Coupon
+                            </span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface">Storewide (Min. ₹2000)</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">₹500 Flat</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface text-sm">Nov 10 - Nov 15, 2023</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-xs mt-0.5">Starts in 15 days</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-outline text-on-surface-variant font-label-sm text-label-sm bg-surface-container">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                Scheduled
+                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error rounded hover:bg-error-container transition-colors" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Paused -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Organic Staples BOGO</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5 text-on-surface-variant italic">Auto-applied</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">inventory_2</span>
+                                Product
+                            </span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface">Selected Organic Dals</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Buy 1 Get 1</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface text-sm">Ongoing</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-tertiary-container text-tertiary-container font-label-sm text-label-sm bg-surface">
+<span class="material-symbols-outlined text-[14px]">pause</span>
+                                Paused
+                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded hover:bg-primary-fixed transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-error rounded hover:bg-error-container transition-colors" title="Archive">
+<span class="material-symbols-outlined text-[20px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Expired -->
+<tr class="hover:bg-surface-container-low transition-colors group opacity-60">
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Weekend Dairy Special</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm mt-0.5 font-mono bg-surface-variant px-1.5 py-0.5 rounded inline-block w-max">MILK10</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">category</span>
+                                Category
+                            </span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md text-body-md text-on-surface">Dairy Products</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-label-md text-label-md text-on-surface font-semibold">10% OFF</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface text-sm">Oct 20 - Oct 22, 2023</span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-error text-error font-label-sm text-label-sm bg-error-container bg-opacity-30">
+                                Expired
+                            </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded hover:bg-primary-fixed transition-colors" title="View Details">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-outline-variant bg-surface flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">Showing 1 to 4 of 24 entries</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary-container text-on-primary font-label-sm text-label-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container font-label-sm text-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container font-label-sm text-label-sm">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

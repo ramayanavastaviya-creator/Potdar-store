@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Potdar Store Mobile Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-secondary-fixed-variant": "#474646",
+                            "on-primary-fixed-variant": "#0038b6",
+                            "on-primary-container": "#dfe3ff",
+                            "primary": "#003ec7",
+                            "on-surface-variant": "#434656",
+                            "on-tertiary-fixed": "#1a1c1c",
+                            "error": "#ba1a1a",
+                            "outline-variant": "#c3c5d9",
+                            "on-tertiary-container": "#e4e5e5",
+                            "on-error": "#ffffff",
+                            "inverse-surface": "#2f3038",
+                            "secondary-fixed": "#e5e2e1",
+                            "on-surface": "#1a1b22",
+                            "surface-variant": "#e3e1ec",
+                            "on-background": "#1a1b22",
+                            "secondary": "#5f5e5e",
+                            "error-container": "#ffdad6",
+                            "tertiary-fixed-dim": "#c6c6c7",
+                            "inverse-primary": "#b7c4ff",
+                            "on-primary-fixed": "#001452",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "on-tertiary-fixed-variant": "#454747",
+                            "on-error-container": "#93000a",
+                            "tertiary": "#4c4e4f",
+                            "surface-container-low": "#f4f2fd",
+                            "tertiary-fixed": "#e2e2e2",
+                            "secondary-container": "#e5e2e1",
+                            "on-secondary": "#ffffff",
+                            "tertiary-container": "#656666",
+                            "surface": "#fbf8ff",
+                            "background": "#fbf8ff",
+                            "primary-fixed-dim": "#b7c4ff",
+                            "surface-tint": "#004ced",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "surface-container": "#eeedf7",
+                            "surface-dim": "#dad9e3",
+                            "on-tertiary": "#ffffff",
+                            "on-primary": "#ffffff",
+                            "surface-container-high": "#e8e7f1",
+                            "outline": "#737688",
+                            "surface-container-lowest": "#ffffff",
+                            "surface-bright": "#fbf8ff",
+                            "inverse-on-surface": "#f1effa",
+                            "surface-container-highest": "#e3e1ec",
+                            "on-secondary-container": "#656464",
+                            "primary-fixed": "#dde1ff",
+                            "primary-container": "#0052ff"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "unit-md": "16px",
+                            "unit-sm": "8px",
+                            "margin-desktop": "64px",
+                            "unit-xs": "4px",
+                            "gutter": "24px",
+                            "margin-mobile": "20px",
+                            "unit-lg": "24px",
+                            "container-max": "1280px",
+                            "unit-xl": "48px"
+                    },
+                    "fontFamily": {
+                            "body-md": ["Inter"],
+                            "display-lg": ["Plus Jakarta Sans"],
+                            "label-md": ["Inter"],
+                            "headline-lg": ["Plus Jakarta Sans"],
+                            "body-lg": ["Inter"],
+                            "headline-md": ["Plus Jakarta Sans"],
+                            "headline-lg-mobile": ["Plus Jakarta Sans"],
+                            "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .transition-transform-cubic { transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .transition-opacity-cubic { transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface dark:bg-background text-on-surface dark:text-on-surface pb-24 antialiased min-h-screen">
+<!-- Top App Bar (Mobile) -->
+<header class="sticky top-0 z-40 bg-surface/90 dark:bg-background/90 backdrop-blur-md px-margin-mobile py-unit-sm flex justify-between items-center h-[64px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="storefront">storefront</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary dark:text-primary-fixed">Potdar Store</h1>
+</div>
+<div class="flex items-center gap-unit-md">
+<button aria-label="Search" class="p-2 text-on-surface-variant dark:text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Notifications" class="p-2 text-on-surface-variant dark:text-on-secondary-fixed-variant relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-unit-md flex flex-col gap-unit-xl">
+<!-- Delivery Slot Header -->
+<section class="flex flex-col gap-unit-xs border border-outline-variant dark:border-outline rounded-lg p-unit-md bg-surface-container-low dark:bg-surface-container-high">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span class="font-label-md text-label-md">Delivery in 15 mins</span>
+</div>
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant line-clamp-1">123 Market St, San Francisco, CA</p>
+</section>
+<!-- Featured Banner -->
+<section class="relative rounded-xl overflow-hidden h-[180px] w-full border border-outline-variant dark:border-outline">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A cinematic, high-end grocery store display of fresh organic vegetables and fruits arranged beautifully. Soft, bright lighting highlighting the vibrant greens and reds. Modern, clean aesthetic, dark mode compatible palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDoctWG-STleL5IgTxoeeTRYry_Jf3rtOIMg4w7Rf3mbfaStrPiW3pEg0LdXhK_9mWB4kUrq_4wNmFk-s3SskH39xU30XjonfCSOa8tn8XRnBiLSzp-PhU6mPI_ZLuCw5RUrKN5ERmB0aR8YLJ5miEacyN-2aAjZuOsrrNb3XqYGQ38PD4E7_30TaXkeGIsqOrxj1B1K9xRz4Aq-sNZ-vD-bmc7UJfDmNYV-w71P8TB355Tg7badr5AVw')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 to-transparent p-unit-lg flex flex-col justify-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary">Fresh &amp;<br/>Organic Deals</h2>
+<button class="mt-unit-sm bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded self-start">Shop Now</button>
+</div>
+</section>
+<!-- Category Horizontal Scroll -->
+<section>
+<h3 class="font-headline-md text-headline-md mb-unit-md text-on-surface dark:text-on-surface">Categories</h3>
+<div class="flex overflow-x-auto gap-unit-md no-scrollbar pb-unit-sm">
+<!-- Category Items -->
+<div class="flex flex-col items-center min-w-[72px] gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-high dark:bg-inverse-surface border border-outline-variant dark:border-outline flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A crisp, perfectly isolated red apple on a clean white background. High resolution, studio lighting, modern minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx__J1-OX7hAcyUIvU8iT1B2t1vIxTHGiTVpS4KdQAj68v50l9nlDl_YVJu7I-EKfwFx2rsn560Y6YcgE1HQidS62h1N4s5LygZ8pgXNMj7U5gWuCb58oNAtZ_PYi19tgut6s3oZrYLwiQ58xS7lVG7IQUoei55wT3WoFAVo0VW1mSTLqOwpoyI_MLwdNjMUp6nn14CQ_lq9V6H2edGKCRDt7xHeDeL4iqI9OUhE8Oerw3Ru_FrDY-EA"/>
+</div>
+<span class="font-label-sm text-label-sm text-center">Fruits</span>
+</div>
+<div class="flex flex-col items-center min-w-[72px] gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-high dark:bg-inverse-surface border border-outline-variant dark:border-outline flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A fresh bunch of green broccoli isolated on a pristine background. Crisp details, bright lighting, premium grocery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFrMk6qg5RuIi9mhTbkZmDc2-nGHTydYl2m01Idkrqu2lJFU3RmAyJr3i1rKVXxVLHOxEcLkwdVhPrZcqIXTfHyOHzNImZiyPfXllQEDw1eBfw0uRb1MuBuKGAVUsR1Ws0R_t7beIAwoOEAvAd-9vLHLJtZK6tT-spz7S3gUitv0Ym3Dsww0-fMQ5Yoo_0Mwnl3dP33Y1YI2jTEKcSPkalHC0LIfKQCYmWkgzV8BvNZt6QHdAHpr6bgQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-center">Veg</span>
+</div>
+<div class="flex flex-col items-center min-w-[72px] gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-high dark:bg-inverse-surface border border-outline-variant dark:border-outline flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A glass bottle of milk next to a wedge of cheese, clean minimal style, well-lit studio photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-iBfPKSTHFDFbc-4ekT89Z2UuaTCROlKSE0kAS5PBd38J2HgfH4b_d6RDgNpm3wtcmEGQ_5e4kkYk79ZFaKlMCLLhWGRHrX6C_9CWdSgBTf5YDrbXxGBxYa2OO_oqdeXFCT5nHqPYYdyiefSNXvutCfJHyhEYdBKRsaHhrj71Howe5DVzRsVFV0vHS7MLkgnmbLUfAa6DkNWBrRQHBlPejLSIv93_Wi1EDKgymC7S1mkjnVFmDYH8FQ"/>
+</div>
+<span class="font-label-sm text-label-sm text-center">Dairy</span>
+</div>
+<div class="flex flex-col items-center min-w-[72px] gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-high dark:bg-inverse-surface border border-outline-variant dark:border-outline flex items-center justify-center">
+<img class="w-10 h-10 object-contain" data-alt="A loaf of artisanal sourdough bread on a plain background. Warm tones, sharp focus on texture, high-end bakery look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD__liPsHt7uoH4T-LTf5eKZ6540lBbC8NhxXZ21v2HIwYphI-L2Xf3-9uwZULSujmdzBQ-x7uMRrtShDscoL-EG41zSAUgFP6QoJGvANKHLQzQ4NFpJq7_vHJWPqrSn-cBD39yCuMr_jIlQEjv9BuFf_bdxm1pW3LPElUz_V1Yhknyvn5-md-fZrLj9qPWjJJ8w2c6GUBccm2uda0eaJA6S03xTLpm4dOa0Kj-o1mS6ZwGe0xo4Ij0FA"/>
+</div>
+<span class="font-label-sm text-label-sm text-center">Bakery</span>
+</div>
+<div class="flex flex-col items-center min-w-[72px] gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container-high dark:bg-inverse-surface border border-outline-variant dark:border-outline flex items-center justify-center text-primary dark:text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<span class="font-label-sm text-label-sm text-center">See All</span>
+</div>
+</div>
+</section>
+<!-- Product Grid (Bento style for mobile) -->
+<section>
+<div class="flex justify-between items-center mb-unit-md">
+<h3 class="font-headline-md text-headline-md text-on-surface dark:text-on-surface">Trending Today</h3>
+<button class="text-primary dark:text-primary-fixed font-label-md text-label-md">See All</button>
+</div>
+<div class="grid grid-cols-2 gap-unit-md">
+<!-- Product Card 1 -->
+<article class="flex flex-col border border-outline-variant dark:border-outline rounded-lg overflow-hidden bg-surface-container-lowest dark:bg-surface-container-low">
+<div class="relative aspect-square bg-surface-container-high dark:bg-inverse-surface">
+<img class="w-full h-full object-contain p-4" data-alt="A perfectly ripe, bright yellow banana isolated against a light grey background. Sharp details, soft shadows, minimalist product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmbDiP9jKm2_0X1fl9fiqZ1H7UFfeaY23SryzEEzuYzKoVko4gcQgCh-vPOWurVAtBTXNiYC20pHj372qqvq5Jy8IyKHW0dxum1eqWZppV6HF-2q2RuugqJWjBu75wAVUPHJh2GxEL_cxwqLMrlwOX1-oJGBBUZM6P761Pv_jT4uuGQuMXbI7V0yZ7TL6rhx7sMg1yKUT9ugBLTmGJE_YRWn0Rji05-UUL4Z0A3QpK4GYyOKQWRd5M4g"/>
+<div class="absolute top-2 left-2 bg-error text-on-error font-label-sm text-[10px] px-1.5 py-0.5 rounded">-15%</div>
+</div>
+<div class="p-unit-sm flex flex-col gap-1 flex-grow">
+<span class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-secondary-fixed-variant">Organic</span>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-surface line-clamp-2">Premium Bananas (Dozen)</h4>
+<div class="mt-auto flex justify-between items-end pt-2">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">$2.99</span>
+<button aria-label="Add to cart" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="flex flex-col border border-outline-variant dark:border-outline rounded-lg overflow-hidden bg-surface-container-lowest dark:bg-surface-container-low">
+<div class="relative aspect-square bg-surface-container-high dark:bg-inverse-surface">
+<img class="w-full h-full object-contain p-4" data-alt="A carton of organic whole milk with a clean, modern label design. Isolated on a neutral background, professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6l9wcJOgfoBaSxm-Y5t6DIkY9heJ46a98eJCs-Zy9XtBOtLLpwKipqJgFw4A6RKkgmLjB5ZIV9g8IrB7CD3nGaVGIUJZ7b6D5TWroGatJEAtbsSXrXw0G2K5LcsGrv1SG_37VuTPjffJ0-TxlLWDGUvFyfiapmoT7sdg7TfnggF4kArL-vgbUgqOMvBH5A_SWdZS68wZ-E67Lk2sbHbTosfvksh1qeHcpD-DQIFamwsRlW6MLKyb3NA"/>
+</div>
+<div class="p-unit-sm flex flex-col gap-1 flex-grow">
+<span class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-secondary-fixed-variant">Dairy</span>
+<h4 class="font-label-md text-label-md text-on-surface dark:text-on-surface line-clamp-2">Organic Whole Milk 1L</h4>
+<div class="mt-auto flex justify-between items-end pt-2">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">$4.49</span>
+<button aria-label="Add to cart" class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component) -->
+<nav class="bg-surface dark:bg-background border-t border-outline-variant dark:border-outline fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-margin-mobile py-2 pb-6">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high rounded-lg p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high rounded-lg p-1 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high rounded-lg p-1 transition-colors relative" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-0 right-1 w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label-sm text-label-sm-mobile mt-1">Cart</span>
+</a>
+</nav>
+</body></html>

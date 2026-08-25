@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Admin - Order Cancellation Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#dde1ff",
+                      "surface-container-high": "#e8e7f1",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "surface-container-highest": "#e3e1ec",
+                      "on-primary-container": "#dfe3ff",
+                      "surface-container": "#eeedf7",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "surface-dim": "#dad9e3",
+                      "on-background": "#1a1b22",
+                      "inverse-on-surface": "#f1effa",
+                      "surface": "#fbf8ff",
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "secondary": "#5f5e5e",
+                      "tertiary": "#4c4e4f",
+                      "primary-container": "#0052ff",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2f3038",
+                      "on-surface": "#1a1b22",
+                      "inverse-primary": "#b7c4ff",
+                      "surface-tint": "#004ced",
+                      "on-tertiary-container": "#e4e5e5",
+                      "surface-container-low": "#f4f2fd",
+                      "surface-bright": "#fbf8ff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed": "#001452",
+                      "on-primary-fixed-variant": "#0038b6",
+                      "outline": "#737688",
+                      "secondary-fixed": "#e5e2e1",
+                      "tertiary-container": "#656666",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-error-container": "#93000a",
+                      "background": "#fbf8ff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "primary": "#003ec7",
+                      "on-surface-variant": "#434656",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "outline-variant": "#c3c5d9",
+                      "secondary-container": "#e5e2e1",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#656464",
+                      "surface-variant": "#e3e1ec"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-xs": "4px",
+                      "unit-md": "16px",
+                      "unit-xl": "48px",
+                      "margin-mobile": "20px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "64px",
+                      "unit-sm": "8px",
+                      "gutter": "24px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        [data-weight="fill"] .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- Side Navigation -->
+<nav class="hidden md:flex bg-surface-container-lowest dark:bg-inverse-surface h-screen w-64 border-r border-outline-variant dark:border-outline fixed left-0 top-0 flex-col z-50">
+<div class="p-gutter border-b border-outline-variant dark:border-outline">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Potdar Store</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Management Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto py-unit-sm">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-secondary-container" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="p-4 border-t border-outline-variant dark:border-outline flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex-shrink-0">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of an administrator in a well-lit, modern office environment. High quality, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC20wVHliJjimw81RxAzIABDUDYcd3E1s3dYSTHHxAuwJylR2icRKPjjZzxVkIFeB28dMIdO9SIIgfUVgEcxVJw3D6v7RNWG0wArlMV4lDjYeG2K8vD4khPEqQ4WwBo9R8_mLFFrMsP5poFw6_CD9qwVCwP4L4nDsaPv7J75EV-V4csA8K5-NWNwbGkNnJaudUPMT-7Tepb3DAkFFljeEwIbWcPXz7tnHeLBoqp0ZZ1xta6he1gf_IzDg"/>
+</div>
+<div class="overflow-hidden">
+<p class="font-label-md text-label-md text-on-surface truncate">Admin User</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">Store Manager</p>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full h-full overflow-hidden bg-surface">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 border-b border-outline-variant dark:border-outline flex justify-between items-center h-16 px-gutter flex-shrink-0 z-40">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Search -->
+<div class="hidden sm:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant focus-within:border-primary transition-colors w-64 lg:w-96">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none outline-none text-body-md font-body-md w-full placeholder-on-surface-variant" placeholder="Search orders, customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between mb-unit-lg gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md flex items-center gap-1 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="arrow_back">arrow_back</span>
+                                Back to Orders
+                            </a>
+</div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface flex items-center gap-3">
+                            Order #ORD-2024-8921
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-error-container text-on-error-container border border-error/20">
+                                Cancelled
+                            </span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Placed on Oct 24, 2024, 10:15 AM</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+                            Print Receipt
+                        </button>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-lg font-label-md text-label-md hover:bg-primary transition-colors hover:text-on-primary flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                            Email Customer
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Details -->
+<div class="lg:col-span-2 space-y-gutter">
+<!-- Cancellation & Refund Card (NEW SECTION) -->
+<div class="bg-surface-container-lowest border border-error/30 rounded-xl overflow-hidden">
+<div class="bg-error-container/20 px-unit-md py-3 border-b border-error/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-error" data-icon="cancel">cancel</span>
+<h3 class="font-headline-md text-headline-md text-error">Cancellation Details</h3>
+</div>
+<div class="p-unit-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md mb-unit-lg">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Cancelled By</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Customer</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Reason</p>
+<p class="font-body-md text-body-md text-on-surface">Ordered by mistake</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Timestamp</p>
+<p class="font-body-md text-body-md text-on-surface">Oct 24, 2024, 15:30</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1 uppercase tracking-wider">Inventory Status</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<p class="font-body-md text-body-md font-medium">Restored (+3 units)</p>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-unit-md">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface mb-4">Refund Information</h4>
+<div class="bg-surface-container-low rounded-lg p-unit-md border border-outline-variant">
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+<div>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">₹840.00</p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-1">
+                                                    Paid via UPI 
+                                                    <span class="w-1 h-1 rounded-full bg-outline-variant mx-1"></span>
+                                                    ID: REF-98273-01
+                                                </p>
+</div>
+<div class="flex items-center gap-2 bg-primary-fixed-dim/20 text-primary-fixed-dim px-3 py-1.5 rounded-full border border-primary-fixed-dim/30">
+<svg class="animate-spin h-4 w-4 text-primary" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span class="font-label-md text-label-md text-primary font-medium">Processing</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm">
+                                                Retry Refund
+                                            </button>
+<button class="px-4 py-2 text-primary font-label-md text-label-md hover:bg-primary/5 rounded-lg transition-colors">
+                                                View Transaction History
+                                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ordered Items -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-unit-md py-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Order Items (3)</h3>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Item 1 -->
+<div class="p-unit-md flex items-center gap-4 opacity-75">
+<div class="w-16 h-16 rounded-lg bg-surface-variant border border-outline-variant flex-shrink-0 overflow-hidden">
+<img alt="Organic Avocados" class="w-full h-full object-cover" data-alt="A high quality, bright image of organic avocados on a clean white background. Retail grocery style photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1IQff6h6JOhfq0u-eJCtaNWDWZlhjZ_g7M6uK6zm3NXQKxDBKYcK09w0QFCPDaBjJj-6EjV7Qp3XtTmtxaTplpZ5dnT-D3Z9k9tJXwMXMT_cvFqetfmsLkWvs4l5_oa-wHBoKEPj_STqgcNbcsyWUOzKoLVxHZnFP-5PGriuBhno0ZK_mQAbUP6P5rsKhcFlGWlCMJ56-9nypOC8TUhzWXrqyC4XnT87O6oJ_hS6bikBhxxLruOU6Tg"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Organic Hass Avocados</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Pack of 2</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface font-medium">₹240.00</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-unit-md flex items-center gap-4 opacity-75">
+<div class="w-16 h-16 rounded-lg bg-surface-variant border border-outline-variant flex-shrink-0 overflow-hidden">
+<img alt="Sourdough Bread" class="w-full h-full object-cover" data-alt="A loaf of fresh artisanal sourdough bread on a minimal, clean background. Bright light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIq8DzLiFIvCu7gA0Kk_6R-gpcobl-olgQt_x2e20xkLTjH0H6MqlxPqSAq4w1uZMmfJbtsJbXNHh6aDH2J1QE7-t6bBYvHRhHneJUGd5qKWjxlTYuvRYnsjmIM52YU5YtVqjrXV20soaSbQJFfarV6JlEXUqIsNqPTr-r33DWhXwIYdMkK4zGzxAGTJF2yLmq6ih1ZDHh1T-_WahRWfw6e2ei_OqEglcdNrHgsNj2v-GZS1WG86Z11A"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Artisan Sourdough Bread</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Freshly baked, 500g</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface font-medium">₹150.00</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 2</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-unit-md flex items-center gap-4 opacity-75">
+<div class="w-16 h-16 rounded-lg bg-surface-variant border border-outline-variant flex-shrink-0 overflow-hidden">
+<img alt="Farm Eggs" class="w-full h-full object-cover" data-alt="A carton of premium farm-fresh eggs on a clean, minimal background. High key lighting, retail aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9chwDw9Wi96vWIBl8BOgaRfdwPjMSAVpTo2f2e-GuTD5DAiZFqA33ZLiCC97de-toCxu5MG8ALmA98gW9iURmHZkLs0SgbKrbHb7tnvfFDBOc4YCYSzZaeCKi9JmaF1FaDllUjvxMsAwliYJw9DHSGj9rQJ9onHWtZ7IX4vISE9R1MC7Eo1eQz1_tlyVdeac97ANENNcfL1rKGo2A0osTjkRKOsOXBl0N2SF6yR241ubAqRIjG4_tSA"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Farm Fresh Eggs</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Pack of 6, Free Range</p>
+</div>
+<div class="text-right">
+<p class="font-label-md text-label-md text-on-surface font-medium">₹90.00</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Qty: 1</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-unit-md border-t border-outline-variant">
+<div class="space-y-2 mb-4">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>₹630.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Delivery Fee</span>
+<span>₹50.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Taxes</span>
+<span>₹160.00</span>
+</div>
+</div>
+<div class="flex justify-between items-center border-t border-outline-variant pt-4">
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Total Refundable</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">₹840.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar info -->
+<div class="space-y-gutter">
+<!-- Customer Info -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-unit-md py-4 border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-on-surface">Customer</h3>
+</div>
+<div class="p-unit-md">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md font-bold">
+                                        JD
+                                    </div>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">John Doe</p>
+<p class="font-body-md text-body-md text-on-surface-variant">john.doe@example.com</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mt-0.5" data-icon="phone">phone</span>
+<p class="font-body-md text-body-md text-on-surface">+91 98765 43210</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mt-0.5" data-icon="location_on">location_on</span>
+<p class="font-body-md text-body-md text-on-surface">123, Palm Grove Apartments,<br/>Koregaon Park, Pune 411001</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Timeline -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="px-unit-md py-4 border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-on-surface">Timeline</h3>
+</div>
+<div class="p-unit-md">
+<div class="relative pl-6 space-y-6 before:absolute before:inset-y-0 before:left-[11px] before:w-px before:bg-outline-variant">
+<!-- Node 1: Placed -->
+<div class="relative">
+<div class="absolute -left-[30px] top-1 w-5 h-5 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<div>
+<p class="font-label-md text-label-md font-medium text-on-surface-variant">Order Placed</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 24, 10:15 AM</p>
+</div>
+</div>
+<!-- Node 2: Confirmed -->
+<div class="relative">
+<div class="absolute -left-[30px] top-1 w-5 h-5 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center z-10">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<div>
+<p class="font-label-md text-label-md font-medium text-on-surface-variant">Order Confirmed</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Oct 24, 10:20 AM</p>
+</div>
+</div>
+<!-- Node 3: Cancelled (Final) -->
+<div class="relative">
+<div class="absolute -left-[30px] top-1 w-5 h-5 rounded-full bg-error border-2 border-error flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[12px] text-on-error" data-icon="close" data-weight="fill">close</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-error">Cancelled</p>
+<p class="font-label-sm text-label-sm text-error mt-0.5">Oct 24, 15:30 PM</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm bg-surface-container-low p-2 rounded border border-outline-variant inline-block">By Customer: Ordered by mistake</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom spacer -->
+<div class="h-unit-xl"></div>
+</div>
+</main>
+</div>
+</body></html>

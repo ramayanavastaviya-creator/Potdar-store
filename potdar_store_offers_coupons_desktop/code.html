@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Offers - Potdar Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-container": "#656666",
+                        "outline": "#737688",
+                        "primary": "#003ec7",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b7c4ff",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#dfe3ff",
+                        "primary-container": "#0052ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "tertiary": "#4c4e4f",
+                        "primary-fixed": "#dde1ff",
+                        "surface-dim": "#dad9e3",
+                        "surface-container-low": "#f4f2fd",
+                        "surface-variant": "#e3e1ec",
+                        "secondary-container": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-bright": "#fbf8ff",
+                        "inverse-on-surface": "#f1effa",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eeedf7",
+                        "on-primary-fixed": "#001452",
+                        "on-tertiary-container": "#e4e5e5",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "secondary": "#5f5e5e",
+                        "on-surface-variant": "#434656",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "background": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "on-surface": "#1a1b22",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface": "#fbf8ff",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline-variant": "#c3c5d9",
+                        "on-background": "#1a1b22",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#004ced",
+                        "on-secondary-container": "#656464",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xl": "48px",
+                        "unit-lg": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Web) -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop md:px-margin-desktop max-w-container-max mx-auto h-20 bg-surface dark:bg-background border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-unit-lg">
+<span class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed">Potdar Store</span>
+<div class="relative ml-unit-lg hidden md:block">
+<span class="material-symbols-outlined absolute left-unit-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-unit-xl pr-unit-md py-2 border border-outline-variant rounded-lg bg-surface-container-lowest text-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container focus:outline-none transition-colors w-64" placeholder="Search..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-unit-lg">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Grocery</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Snacks</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Beverages</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Dairy</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Bakery</a>
+</nav>
+<div class="flex items-center gap-unit-md">
+<button aria-label="location_on" class="p-2 text-primary dark:text-primary-fixed hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button aria-label="shopping_bag" class="p-2 text-primary dark:text-primary-fixed hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="hidden md:flex font-label-md text-label-md text-on-surface hover:text-primary transition-colors items-center gap-2">Account</button>
+<button class="hidden md:flex px-4 py-2 bg-primary-container text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary transition-colors">Cart</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-unit-xl">
+<div class="mb-unit-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Exclusive Offers &amp; Coupons</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover premium savings across our curated selection of high-quality groceries and daily essentials.</p>
+</div>
+<!-- Bento Grid Layout for Offers -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-unit-xl">
+<!-- Featured Offer (Spans 8 cols) -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg flex flex-col md:flex-row gap-unit-lg relative overflow-hidden group hover:border-primary-container transition-colors">
+<div class="md:w-1/2 flex flex-col justify-center z-10 relative">
+<span class="inline-block bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-tertiary-container mb-4 self-start">Featured Coupon</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">20% Off Fresh Organic Produce</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Elevate your meals with farm-fresh, organically sourced vegetables and fruits. Minimum order ₹1500.</p>
+<div class="flex items-center gap-unit-md mt-auto">
+<div class="flex items-center border border-dashed border-outline rounded-lg px-4 py-2 bg-surface">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mr-4">ORG20</span>
+<button aria-label="Copy code" class="text-primary-container hover:text-primary transition-colors" onclick="alert('Copied ORG20')">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<a class="font-label-md text-label-md text-primary-container hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                            Shop Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:w-1/2 h-48 md:h-auto rounded-lg overflow-hidden relative z-0">
+<div class="bg-cover bg-center w-full h-full absolute inset-0 opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A beautifully styled composition of fresh organic vegetables on a clean, light surface, shot from directly above. The lighting is bright and modern, creating a fresh, premium grocery aesthetic suitable for a high-end e-commerce site. The overall mood is crisp and vibrant, highlighting the quality of the produce." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9gTzCvdIDGGyyQCBEgKZS3_XAepVUle4PDm9lw-C6b5et2XvFJvvaWCT3Zh2PbT-7SWsJLUsY6ZAcHukEcFF1-LRhQlvF2L_XpjU33MGPDCWa3Xy6NzW6Qfe2fqqWwY2jC0sPjM_jsySoi2ODIGUTXS4xwiKIbyoAqTP8I5oK3YmWUzHiADTFZz__wi27g0OoN5bAMe5SJxuhdO6n9oG5jnNgUW377C4LCDOUWaMmly7hKs9RdU6Zsw')"></div>
+</div>
+</div>
+<!-- Secondary Offer (Spans 4 cols) -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg flex flex-col hover:border-primary-container transition-colors">
+<span class="inline-block bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-tertiary-container mb-4 self-start">Bank Offer</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Flat ₹500 Cashback</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">On HDFC Bank Credit Cards. Valid on orders above ₹3000.</p>
+<div class="mt-auto">
+<p class="font-label-sm text-label-sm text-outline mb-4">No code required. Applied at checkout.</p>
+<a class="inline-block px-4 py-2 bg-primary-container text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary transition-colors w-full text-center" href="#">Shop Now</a>
+</div>
+</div>
+<!-- Standard Offers Row -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg flex flex-col hover:border-primary-container transition-colors">
+<span class="inline-block bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-tertiary-container mb-4 self-start">Category Deal</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Buy 1 Get 1 Premium Coffee</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Select from our range of artisanal, single-origin coffee beans.</p>
+<div class="mt-auto flex items-center justify-between">
+<p class="font-label-sm text-label-sm text-outline">Valid till Sunday</p>
+<a class="font-label-md text-label-md text-primary-container hover:text-primary flex items-center gap-1 transition-colors" href="#">
+                        Shop Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg flex flex-col hover:border-primary-container transition-colors">
+<span class="inline-block bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-tertiary-container mb-4 self-start">Coupon Code</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">15% Off Dairy Essentials</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Stock up on artisanal cheeses, milk, and yogurts. Min. order ₹800.</p>
+<div class="mt-auto flex flex-col gap-4">
+<div class="flex items-center justify-between border border-dashed border-outline rounded-lg px-4 py-2 bg-surface">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider">DAIRY15</span>
+<button aria-label="Copy code" class="text-primary-container hover:text-primary transition-colors" onclick="alert('Copied DAIRY15')">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<a class="font-label-md text-label-md text-primary-container hover:text-primary flex items-center justify-end gap-1 transition-colors" href="#">
+                        Shop Now <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg flex flex-col hover:border-primary-container transition-colors">
+<span class="inline-block bg-surface-container px-3 py-1 rounded-full font-label-sm text-label-sm text-tertiary-container mb-4 self-start">Payment Offer</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">10% Instant Discount via UPI</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Up to ₹100 discount on your first UPI transaction this month.</p>
+<div class="mt-auto">
+<p class="font-label-sm text-label-sm text-outline mb-4">Select UPI at payment page.</p>
+<a class="inline-block px-4 py-2 border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded-lg hover:border-primary-container transition-colors w-full text-center" href="#">View Details</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-unit-xl px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-auto">
+<div class="col-span-1 md:col-span-4 mb-unit-lg">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface">Potdar Store</span>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">Delivery Information</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-2">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary" href="#">Newsletter</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-unit-lg pt-unit-md border-t border-outline-variant dark:border-outline opacity-70">
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-secondary-fixed-variant">© 2024 Potdar Store. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

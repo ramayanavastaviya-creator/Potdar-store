@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store - Offers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary-container": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-high": "#e8e7f1",
+                        "primary-container": "#0052ff",
+                        "surface-container": "#eeedf7",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001452",
+                        "on-surface": "#1a1b22",
+                        "outline": "#737688",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c5d9",
+                        "on-secondary-fixed-variant": "#474646",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-container": "#e4e5e5",
+                        "on-error": "#ffffff",
+                        "on-background": "#1a1b22",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-surface-variant": "#434656",
+                        "inverse-surface": "#2f3038",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#5f5e5e",
+                        "on-primary-container": "#dfe3ff",
+                        "surface-bright": "#fbf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-highest": "#e3e1ec",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-primary": "#b7c4ff",
+                        "inverse-on-surface": "#f1effa",
+                        "tertiary-container": "#656666",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#004ced",
+                        "background": "#fbf8ff",
+                        "surface-container-low": "#f4f2fd",
+                        "on-secondary-container": "#656464",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface-variant": "#e3e1ec",
+                        "primary": "#003ec7",
+                        "surface": "#fbf8ff",
+                        "tertiary": "#4c4e4f",
+                        "surface-dim": "#dad9e3",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-xs": "4px",
+                        "unit-sm": "8px",
+                        "unit-xl": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "unit-lg": "24px",
+                        "margin-desktop": "64px",
+                        "unit-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .display-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20 border-b border-outline-variant hidden md:flex">
+<div class="flex items-center gap-gutter">
+<span class="font-display-lg text-display-lg font-bold text-primary">Potdar Store</span>
+<nav class="hidden md:flex gap-unit-md ml-unit-xl">
+<!-- Navigation logic: Intent of page is Offers, none of these perfectly match, but we show the links -->
+<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors py-2" href="#">Grocery</a>
+<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors py-2" href="#">Snacks</a>
+<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors py-2" href="#">Beverages</a>
+<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors py-2" href="#">Dairy</a>
+<a class="text-secondary font-label-md text-label-md hover:text-primary transition-colors py-2" href="#">Bakery</a>
+</nav>
+</div>
+<div class="flex items-center gap-unit-md">
+<button class="text-primary hover:opacity-80 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</button>
+<button class="text-primary hover:opacity-80 transition-opacity p-2">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="font-label-md text-label-md text-primary px-4 py-2 hover:bg-surface-container transition-colors rounded">Account</button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded transition-colors hover:bg-primary-fixed hover:text-on-primary-fixed">Cart</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl pb-32 md:pb-unit-xl">
+<!-- Header -->
+<div class="mb-unit-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-unit-sm">Exclusive Offers</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover premium savings curated for our discerning customers. Elevate your grocery experience.</p>
+</div>
+<!-- Featured Offer Banner -->
+<section class="mb-unit-xl">
+<div class="relative w-full h-[400px] md:h-[500px] rounded-xl overflow-hidden border border-outline-variant bg-surface-container flex items-center group cursor-pointer shadow-sm hover:border-primary transition-colors duration-300">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A highly stylized, minimalist photograph of an artisanal charcuterie and wine pairing, sitting on a pristine white marble countertop. Soft, diffused daylight pours in, creating a high-key, modern aesthetic. The colors are predominantly crisp whites, soft greys, and deep rich tones of red wine and cured meats. The overall mood is sophisticated and premium, perfectly suited for a luxury grocery setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD_gukdybRAPmDB7qyMCrx7MZSMmPNo5Ft3L1NjyxDxnrXO6tQ0jERyKDxAJWyMYENg-oLfCbnWrWY5aLocFvXOHFgddDeJSG-w1MvhelJqplFukfWN5MNG7iy6CJvlHg-UuXfC7SOXCxHn1Pn61SZKHnz5DKfirkjX1vedlkYbDlVG3hFe5kknl93i57wZocVzzvSso4vfeRnhTTDv1Qm4xqN9kLyJxbulEBJi3i4XXSQUmMgEBhexVQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<div class="relative z-10 p-gutter md:p-unit-xl max-w-xl">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-full mb-unit-md tracking-wider">FEATURED</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-unit-sm">Weekend Epicurean Bundle</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-unit-lg">Curated artisanal cheeses, cured meats, and a bottle of reserve red. Perfect for an elegant evening at home.</p>
+<div class="flex items-center gap-unit-md mb-unit-lg">
+<span class="font-headline-md text-headline-md text-primary">$85.00</span>
+<span class="font-body-md text-body-md text-outline line-through">$110.00</span>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-8 py-3 rounded hover:opacity-90 transition-opacity">Claim Offer</button>
+</div>
+</div>
+</section>
+<!-- Available Offers Grid -->
+<section>
+<div class="flex justify-between items-end mb-gutter">
+<h3 class="font-headline-md text-headline-md text-on-surface">Available Deals</h3>
+<div class="hidden md:flex gap-2">
+<button class="px-4 py-2 bg-surface-container-highest text-on-surface font-label-md text-label-md rounded border border-outline-variant hover:border-primary transition-colors">All</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant font-label-md text-label-md rounded border border-outline-variant hover:bg-surface-container transition-colors">Produce</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant font-label-md text-label-md rounded border border-outline-variant hover:bg-surface-container transition-colors">Pantry</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Deal Card 1 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface hover:border-primary transition-all duration-300 flex flex-col h-full">
+<div class="relative h-64 bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A pristine arrangement of fresh, organic avocados on a sleek, light grey concrete surface. The lighting is bright and modern, casting soft shadows. The vibrant green of the avocados contrasts beautifully with the minimalist, monochromatic background. The composition is clean, airy, and suggestive of premium, healthy ingredients." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeq1UXD50BHgL8oNefsMif2rnZkPWViFNwiTHGdH4Vr_zX0QxTPUv0fIE8A-GyCOVzBDaKZsN9LCeaxQhj7i76aQzxEU_f2xQDCl7EeGJqxilmf3GiBE9LHfjGHT9LVVwKOPLRQq6LoZvMSmgiT5ftjs7up-6tO-WSXfSEGBwzg_eGFf3g60YyEQ_ny0lo4-fEhT4eix10FB6XXPvaZq5O8Rfs2ZkEHyBKpHLK4oRVEu5s34sERbV8MA')"></div>
+<div class="absolute top-4 left-4 bg-surface text-primary font-label-sm text-label-sm px-2 py-1 rounded shadow-sm border border-outline-variant">20% OFF</div>
+</div>
+<div class="p-gutter flex flex-col flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Organic Hass Avocados</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Rich, creamy, and ethically sourced. Perfect for premium guacamole or toast.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div>
+<span class="font-headline-md text-headline-md text-primary">$4.99</span>
+<span class="font-body-md text-body-md text-outline line-through ml-2">$6.25</span>
+</div>
+<button aria-label="Add to cart" class="text-primary hover:bg-primary-container hover:text-on-primary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Deal Card 2 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface hover:border-primary transition-all duration-300 flex flex-col h-full">
+<div class="relative h-64 bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist close-up of a rustic, artisan sourdough bread loaf resting on a white linen cloth. Subtle morning light highlights the crust's texture. The environment is clean, bright, and modern, using a light mode color palette with soft neutral tones. The aesthetic is high-end bakery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAidbWs11UdLhoCg13XOoH205JW9krP1J8WoLFatoZI1-3Xd2YTCqjYGP1JWTlennvmMZ4pKvEvduvRf2ccvF3fewk_haO1R1gQEeqVMJwACncRvX-QM-O5YjSY1hDwH4-RbBfirnFk7D9xflX-Q1y-4FplF-52rAWXPL2Iv4JcIe-DAUXrE-FsDKU4lhFHp2H1Ihv63hKbILxdfSj0NG_xHFyc8cr8fYCiXzk0idf73aX8QEec9ZcLrA')"></div>
+<div class="absolute top-4 left-4 bg-surface text-primary font-label-sm text-label-sm px-2 py-1 rounded shadow-sm border border-outline-variant">BOGO</div>
+</div>
+<div class="p-gutter flex flex-col flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Artisan Sourdough Loaf</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Buy one, get one free on all daily-baked sourdough. Naturally leavened.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div>
+<span class="font-headline-md text-headline-md text-primary">$7.50</span>
+<span class="font-body-md text-body-md text-outline ml-2">/ 2 loaves</span>
+</div>
+<button aria-label="Add to cart" class="text-primary hover:bg-primary-container hover:text-on-primary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Deal Card 3 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface hover:border-primary transition-all duration-300 flex flex-col h-full">
+<div class="relative h-64 bg-surface-container-low overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, modern glass bottle of premium cold-pressed olive oil set against a pure white background with subtle geometric shadows. The golden-green hue of the oil provides a singular pop of color in the minimalist, light-mode composition. The image conveys purity, luxury, and refined culinary taste." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHdaZ1wDyarxAg8RHA8L4ydOWbgtBAlKy_wDOtKM7r78ZOYNM4v-CN3_fZC01KzF81RB-fvUwXDPNFz8kYNQnkf-gJq68DivBnEPwaQkjB8QpbkyDsO3M9SaI8HWXL1rB5pQyV2-Wi-Iehidf9gBpn21VLiLOIGSo_AXC6MIbXsFDe_PblK3mTuZFQaq1Qlddsbz2xSLgVoqEurf_gaD5Xb1Y82TyN0_Jnd94po4V7289A83LhLhbS5Q')"></div>
+<div class="absolute top-4 left-4 bg-surface text-primary font-label-sm text-label-sm px-2 py-1 rounded shadow-sm border border-outline-variant">MEMBER EXCLUSIVE</div>
+</div>
+<div class="p-gutter flex flex-col flex-grow">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Reserve Extra Virgin Olive Oil</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 flex-grow">Cold-pressed single estate oil. A staple for the refined pantry.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-surface-variant">
+<div>
+<span class="font-headline-md text-headline-md text-primary">$24.00</span>
+<span class="font-body-md text-body-md text-outline line-through ml-2">$32.00</span>
+</div>
+<button aria-label="Add to cart" class="text-primary hover:bg-primary-container hover:text-on-primary-container p-2 rounded transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<!-- Nav logic: Home is first, no direct match for "Offers". We'll highlight Home as a default landing for browsing if it were the main entry, but "Categories" might be closer to browsing offers. Let's leave Home as active to satisfy a default state if none strictly match, but wait, the rules say pick closest match. If none, perhaps none are active, but the instructions say "Apply the style_active_navigation classes ONLY to that matching item, and apply style_inactive_navigation to the rest". If 'Offers' is the intent, none match directly. Let's assume this is accessed via Home. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex md:hidden justify-around items-center px-margin-mobile py-2 bg-surface border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-primary font-bold active:bg-surface-container-high transition-transform scale-95 p-2 rounded">
+<span class="material-symbols-outlined mb-1" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-[10px]">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary p-2 rounded active:bg-surface-container-high">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view">grid_view</span>
+<span class="font-label-sm text-[10px]">Categories</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary p-2 rounded active:bg-surface-container-high">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-[10px]">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary p-2 rounded active:bg-surface-container-high">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-[10px]">Cart</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-unit-xl px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface-container border-t border-outline-variant mb-16 md:mb-0">
+<div class="col-span-1 md:col-span-4 mb-unit-lg">
+<span class="font-headline-md text-headline-md text-on-surface">Potdar Store</span>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">Delivery Information</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-unit-sm">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-primary outline-none" href="#">Newsletter</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-unit-lg pt-unit-md border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Potdar Store. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

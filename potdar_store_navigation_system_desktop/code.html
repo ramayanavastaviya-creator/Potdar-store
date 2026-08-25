@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store - Premium Grocery E-commerce</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface": "#fbf8ff",
+                      "on-tertiary-container": "#e4e5e5",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#dad9e3",
+                      "inverse-surface": "#2f3038",
+                      "on-secondary-container": "#656464",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#e5e2e1",
+                      "on-primary-fixed-variant": "#0038b6",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "outline-variant": "#c3c5d9",
+                      "on-primary-container": "#dfe3ff",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-secondary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "outline": "#737688",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-surface": "#1a1b22",
+                      "surface-container-highest": "#e3e1ec",
+                      "inverse-primary": "#b7c4ff",
+                      "surface-tint": "#004ced",
+                      "surface-container": "#eeedf7",
+                      "on-primary-fixed": "#001452",
+                      "tertiary-container": "#656666",
+                      "on-surface-variant": "#434656",
+                      "background": "#fbf8ff",
+                      "primary": "#003ec7",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#f4f2fd",
+                      "surface-bright": "#fbf8ff",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-variant": "#e3e1ec",
+                      "secondary": "#5f5e5e",
+                      "tertiary-fixed": "#e2e2e2",
+                      "tertiary": "#4c4e4f",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#0052ff",
+                      "inverse-on-surface": "#f1effa",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "primary-fixed": "#dde1ff",
+                      "surface-container-high": "#e8e7f1",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-background": "#1a1b22",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "64px",
+                      "unit-xs": "4px",
+                      "unit-sm": "8px",
+                      "gutter": "24px",
+                      "unit-xl": "48px",
+                      "unit-md": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle ambient shadow for non-flat elements */
+        .ambient-shadow {
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md transition-colors duration-300">
+<!-- Top Navigation Bar -->
+<header class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline docked full-width top-0 flat no shadows sticky z-50 transition-all duration-300 h-20 flex flex-col justify-center" id="main-header">
+<div class="flex justify-between items-center w-full px-margin-desktop md:px-margin-desktop max-w-container-max mx-auto h-full">
+<!-- Brand Logo -->
+<div class="flex-shrink-0 flex items-center gap-2">
+<a class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed tracking-tight hover:opacity-80 transition-opacity" href="#">
+                    Potdar Store
+                </a>
+</div>
+<!-- Central Search Bar (Desktop) -->
+<div class="hidden md:flex flex-1 max-w-2xl mx-gutter relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input aria-label="Search" class="w-full bg-surface-container-low dark:bg-inverse-surface border border-outline-variant dark:border-outline rounded-lg py-3 pl-12 pr-4 text-on-surface dark:text-on-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 placeholder-outline" placeholder="Search groceries, snacks, beverages..." type="text"/>
+<!-- Search focused state visualizer (simplified) -->
+<div class="absolute w-full mt-2 bg-surface dark:bg-inverse-surface border-2 border-primary rounded-lg ambient-shadow hidden group-focus-within:block z-50 top-full">
+<div class="p-4 border-b border-outline-variant dark:border-outline">
+<span class="font-label-md text-label-md text-secondary">Trending</span>
+<div class="flex gap-2 mt-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary">Organic Milk</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full font-label-sm text-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary">Fresh Bread</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Links & Right Actions -->
+<div class="hidden md:flex items-center gap-gutter">
+<nav class="flex gap-unit-lg h-full items-center">
+<a aria-current="page" class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors opacity-80 transition-all duration-200" href="#">Grocery</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Snacks</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Beverages</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Dairy</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Bakery</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4 border-l border-outline-variant dark:border-outline pl-gutter">
+<button aria-label="Location" class="flex items-center gap-1 text-on-surface hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="location_on">location_on</span>
+</button>
+<button class="flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors" data-icon="person">person</span>
+<span>Account</span>
+</button>
+<button class="flex items-center gap-2 font-label-md text-label-md text-on-surface hover:text-primary transition-colors group relative bg-primary-container text-on-primary-container px-4 py-2 rounded-lg hover:bg-primary hover:text-on-primary">
+<span class="material-symbols-outlined fill" data-icon="shopping_bag">shopping_bag</span>
+<span>Cart</span>
+<span class="absolute -top-2 -right-2 bg-error text-on-error font-label-sm text-label-sm w-5 h-5 flex items-center justify-center rounded-full border-2 border-surface">3</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden flex items-center">
+<button aria-label="Open menu" class="text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-lg">
+<!-- Breadcrumbs -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md mb-unit-xl">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Grocery</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span aria-current="page" class="text-on-surface dark:text-on-background font-semibold">Fresh Produce</span>
+</nav>
+<!-- Page Header -->
+<div class="mb-unit-xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface dark:text-on-background mb-2">Fresh Produce</h1>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">Locally sourced, organic vegetables and fruits delivered fresh to your door. Experience the premium quality of Potdar Store.</p>
+</div>
+<!-- Hero Bento Grid Example -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-unit-xl">
+<!-- Featured Large Card -->
+<div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low min-h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed overhead shot of a premium, vibrant assortment of fresh organic vegetables including deep red tomatoes, crisp green lettuce, and bright orange carrots arranged elegantly on a clean white marble countertop. Soft, diffused natural daylight illuminates the scene, creating a fresh, upscale, and appetizing light-mode aesthetic suitable for a high-end grocery store." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMbAacmNUL7WZd4pLemtHpsUD7nTtG4mbV3RRr6M-0B-FnuedVfsSaWKW3oY68Vz5dd_HmaIeqIjmYh6ITbwTm9WWHakzF3wFFugvHomiqZjqY7Ec1kJrUh05qgNfYkh1jYX1t9JMC3K-4oWEMYvDiWJN4VQPCNuyABhfhcpEACsW4QNLUccOcQgDYfTuf_dopYe1HiP-wXEYsC9PwU2JFfWVyCjUAOssZCqThqXb2lUsCgb_bO5bf9g')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="inline-block px-3 py-1 bg-surface/90 backdrop-blur-sm text-primary font-label-sm text-label-sm rounded-full mb-3">Farm Fresh</span>
+<h2 class="font-headline-md text-headline-md text-white mb-2">Organic Harvest Box</h2>
+<p class="font-body-md text-body-md text-white/80 mb-4 max-w-sm">Curated seasonal vegetables directly from local organic farms.</p>
+<button class="bg-primary text-white font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-primary-container transition-colors shadow-sm">Shop Now</button>
+</div>
+</div>
+<!-- Secondary Cards -->
+<div class="relative group overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low min-h-[188px]">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Close-up macro photography of fresh, dewy green grapes clustered together. The lighting is crisp and bright, highlighting the natural textures and creating a refreshing, clean visual style perfect for a premium fruit section in a modern e-commerce interface." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJFmENZNQyDhLqxXy5a8qG-SlTQejrCIrq3ek7g_ojSySthJH9Yom9yFdmW2mR9WQ9_K-GtRko-fKh4Szr6itB1mu0x2lJVRLJOO8CHfrxih7xQM_bBhAKchB_iB1gcnpJ8Xt-eP9Rxum_c9p9vBxKdvk8_lk3S8pUD5gYuKfz8Pq-22jhyNVeyTbQSn2AVlAq39sYbWWoY3ajpJUUTSDeR9naH9Rot7KGzF7PFei0k0QiIKEp6UStVg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4">
+<h3 class="font-headline-md text-headline-md text-white">Seasonal Fruits</h3>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low min-h-[188px] flex flex-col justify-center items-center bg-primary-container/10 p-6 text-center">
+<span class="material-symbols-outlined text-display-lg text-primary mb-2" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Free Delivery</h3>
+<p class="font-label-sm text-label-sm text-secondary">On orders over $50</p>
+</div>
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl border border-outline-variant bg-surface-container-low min-h-[188px] p-6 flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Weekly Specials</h3>
+<p class="font-body-md text-body-md text-secondary mb-4">Save up to 30% on selected items.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-1 hover:underline" href="#">View Offers <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a>
+</div>
+<div class="w-32 h-32 rounded-lg bg-cover bg-center border border-outline-variant" data-alt="A stylized, clean still-life arrangement of premium pantry staples like artisan olive oil bottles, artisanal pasta, and sea salt jars on a minimal light grey background. The lighting is soft and studio-quality, emphasizing a modern, curated utility-luxe grocery aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGoAWLZW2GW3oLOEBndvUmAbwL2qIDU9tcyaLr28xCLSLcF0FJqe4mTtMpqgfKPJ7uRu0dU0MOEkqQHKbitLNCQvswqzOM66pecqXo28SEWZJHHyd-BVK0yS6ZXmw1ehQksDxAsdmiiKhTL5hhdi3ixFCpUkSpIl4_jiV9BW-chAGKEILrs0UqYdJ1N3oGETx5cyLbwyfqPff0PHv-L873WHQ9cwZK6E3-7i1dQMMGyPhV7z-YDCIBCQ')"></div>
+</div>
+</div>
+<!-- Product Grid Section -->
+<div class="flex justify-between items-end mb-6 border-b border-outline-variant pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Trending Grocery</h2>
+<a class="font-label-md text-label-md text-secondary hover:text-primary flex items-center gap-1 group transition-colors" href="#">See All <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter mb-unit-xl">
+<!-- Product Card 1 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface-container-low hover:border-primary transition-colors flex flex-col h-full bg-white dark:bg-inverse-surface">
+<div class="aspect-square relative overflow-hidden bg-surface-dim/30 p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A clean, isolated product shot of a bunch of fresh organic bananas on a stark white background. The image is brightly lit, crisp, and highly detailed, fitting perfectly into a clean, minimalist e-commerce product grid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0mxTAfyVaSv6RrS8ExmeijbbRO9lJdOvDx7sFkmXYu4wg_--WIikMt7lJrUIyUuZtykzzq1SjDY9ad8Fq5jTHQ0K_1PrgUWrRkW8XbLRPvBJiqvasY09FOmmjt4J2acKoZPOkR7qjoL-j1XkF-ZOyu2tDarCqHijop9zekWAVZR1Nffp1x7lhp1lOiel0tixYX7W40OX9txiLswvUKxFTVFIlo40gzosVllzbYmz_dOLa7VGPeb-OXw"/>
+<button class="absolute top-3 right-3 w-8 h-8 rounded-full bg-surface/80 flex items-center justify-center text-secondary hover:text-error transition-colors backdrop-blur-sm border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 bg-surface-dim rounded text-secondary font-label-sm text-label-sm">Organic</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-1 line-clamp-2">Fresh Cavendish Bananas</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-3">1 kg</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">$3.99</span>
+<button aria-label="Add to cart" class="md:opacity-0 md:-translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all bg-primary text-white p-2 rounded-lg hover:bg-primary-container">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface-container-low hover:border-primary transition-colors flex flex-col h-full bg-white dark:bg-inverse-surface">
+<div class="aspect-square relative overflow-hidden bg-surface-dim/30 p-4">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A clean, isolated product shot of a carton of premium organic whole milk on a bright white background. The lighting highlights the carton's clean typography and design, ensuring a crisp, minimalist look for a high-end grocery interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ieZYZ4YJ6xLT5v8Zn9Ug8F6p3SJciRnmzEs_D4l2Ri9WSnZhSS4uo4DQlc8lMF1q9SZ4LqQyibad86WAMBj5eqLMz2ovpFHT9XLIvEwPBdc5QN1o683G-dCsgLzcxRp6cQhPUGqK_oOmi7HKm1uA4F35Jvc-qH71iqEpfCngXvav6Fi_LDIhwsi4RNpbi86kmXRmAiTNOi73TZ8e-a09zKzbjZg4MLDKCd8oKJZZb501Csr8LY1B3w"/>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<div class="flex gap-2 mb-2">
+<span class="px-2 py-0.5 bg-surface-dim rounded text-secondary font-label-sm text-label-sm">Dairy</span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold mb-1 line-clamp-2">Organic Whole Milk</h3>
+<p class="font-label-sm text-label-sm text-secondary mb-3">1 Gallon</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-md text-headline-md text-on-surface">$5.49</span>
+<button aria-label="Add to cart" class="md:opacity-0 md:-translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all bg-primary text-white p-2 rounded-lg hover:bg-primary-container">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty slots to demonstrate grid layout -->
+<div class="border border-outline-variant border-dashed rounded-xl flex items-center justify-center p-8 bg-surface-container-lowest/50 min-h-[300px]">
+<p class="font-label-md text-label-md text-secondary text-center">More items<br/>loading...</p>
+</div>
+<div class="border border-outline-variant border-dashed rounded-xl flex items-center justify-center p-8 bg-surface-container-lowest/50 min-h-[300px] hidden md:flex">
+<p class="font-label-md text-label-md text-secondary text-center">More items<br/>loading...</p>
+</div>
+</div>
+</main>
+<!-- Footer Component (Shared) -->
+<footer class="bg-surface-container dark:bg-inverse-surface text-primary dark:text-primary-fixed full-width border-t border-outline-variant dark:border-outline flat no shadows w-full py-unit-xl px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter mt-auto">
+<!-- Brand Column -->
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-on-surface dark:text-inverse-on-surface font-bold">Potdar Store</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant">Delivering premium quality groceries right to your doorstep with care and efficiency.</p>
+</div>
+<!-- Links Column 1 -->
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-on-surface font-semibold mb-1">Shop</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">Delivery Information</a>
+</div>
+<!-- Links Column 2 -->
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-on-surface font-semibold mb-1">Legal</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">Terms of Service</a>
+</div>
+<!-- Links Column 3 -->
+<div class="flex flex-col gap-3">
+<span class="font-label-md text-label-md text-on-surface font-semibold mb-1">Connect</span>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">Contact Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:ring-2 focus:ring-primary outline-none rounded w-fit" href="#">Newsletter</a>
+</div>
+<!-- Copyright Row -->
+<div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-outline-variant/50 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-secondary-fixed-variant">© 2024 Potdar Store. All rights reserved.</p>
+<div class="flex gap-4">
+<!-- Social placeholders -->
+<span class="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-secondary">in</span>
+<span class="w-8 h-8 rounded-full bg-surface-dim flex items-center justify-center text-secondary">tw</span>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Only - Suppressed visually here as it's a desktop layout request, but included structurally per rules if screen shrinks) -->
+<nav class="bg-surface dark:bg-background text-primary dark:text-primary-fixed docked full-width bottom-0 z-50 border-t border-outline-variant dark:border-outline flat no shadows fixed bottom-0 left-0 w-full flex md:hidden justify-around items-center px-margin-mobile py-2 pb-safe">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high p-2 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-95 transition-transform" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm-mobile">Home</span>
+</a>
+<a aria-current="page" class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:bg-surface-container-high p-2 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-95 transition-transform fill" data-icon="grid_view">grid_view</span>
+<span class="font-label-sm text-label-sm-mobile">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high p-2 rounded-lg transition-colors group" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-95 transition-transform" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-sm text-label-sm-mobile">Orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim active:bg-surface-container-high p-2 rounded-lg transition-colors group relative" href="#">
+<span class="material-symbols-outlined mb-1 group-active:scale-95 transition-transform" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-label-sm-mobile">Cart</span>
+<span class="absolute top-1 right-2 bg-error text-on-error font-label-sm text-[10px] w-4 h-4 flex items-center justify-center rounded-full">3</span>
+</a>
+</nav>
+<script>
+        // Simple script to handle header scroll state (compacting)
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.remove('h-20');
+                header.classList.add('h-16', 'ambient-shadow');
+            } else {
+                header.classList.add('h-20');
+                header.classList.remove('h-16', 'ambient-shadow');
+            }
+        });
+    </script>
+</body></html>

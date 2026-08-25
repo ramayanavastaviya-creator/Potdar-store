@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notification Preferences - Potdar Store Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e3e1ec",
+                        "secondary": "#5f5e5e",
+                        "primary-container": "#0052ff",
+                        "surface": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "primary": "#003ec7",
+                        "secondary-container": "#e5e2e1",
+                        "on-surface": "#1a1b22",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "secondary-fixed": "#e5e2e1",
+                        "background": "#fbf8ff",
+                        "tertiary": "#4c4e4f",
+                        "on-primary-fixed": "#001452",
+                        "outline-variant": "#c3c5d9",
+                        "surface-container": "#eeedf7",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#b7c4ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#004ced",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#e4e5e5",
+                        "on-secondary-container": "#656464",
+                        "primary-fixed": "#dde1ff",
+                        "surface-variant": "#e3e1ec",
+                        "tertiary-container": "#656666",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "outline": "#737688",
+                        "inverse-on-surface": "#f1effa",
+                        "surface-container-low": "#f4f2fd",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-high": "#e8e7f1",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434656",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#1a1b22",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#dfe3ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed-variant": "#474646",
+                        "surface-bright": "#fbf8ff",
+                        "surface-dim": "#dad9e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-sm": "8px",
+                        "unit-xs": "4px",
+                        "container-max": "1280px",
+                        "unit-xl": "48px",
+                        "gutter": "24px",
+                        "unit-md": "16px",
+                        "margin-desktop": "64px",
+                        "unit-lg": "24px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0052ff;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0052ff;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            width: 44px;
+            height: 24px;
+            background-color: #c3c5d9;
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .toggle-label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline fixed left-0 top-0 h-full flex flex-col z-50 w-64">
+<div class="px-6 py-8 border-b border-outline-variant dark:border-outline">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface tracking-tight">Potdar Store</h1>
+<p class="font-label-sm text-label-sm text-secondary mt-1 uppercase tracking-wider">Management Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-6 py-3 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-secondary-container" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="p-6 border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-3">
+<img alt="Admin User Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A small, circular avatar image showing a professional headshot of an administrator in a minimalist modern style, bright lighting, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAVy2msa7K6MoQdfFqBzOfOGhKPsgfoQRoPlZlnL7CyQcumFCRyptm4HIingVB8JyaAzqF3bLrVMYqLxd7R9ibjksY6cX5HPsyJsGETaNtMs-EbH2SCxAcif6VsiKJlLttZYzSIKF9PrGxICJPv0lsvTAOIBgpQMWLUSxN-49bmim3uCSekY6jSufkPHkS_Flth0lpmM3iXAY3R8rIr7hRKBlDeMA8vvOZeY0274sszSpym4hcEO7dYA"/>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Admin User</p>
+<p class="font-label-sm text-label-sm text-secondary">admin@potdar.com</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-gutter border-b border-outline-variant dark:border-outline bg-surface dark:bg-surface-dim sticky top-0 z-40 w-full">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-md text-headline-md font-black text-on-surface dark:text-inverse-on-surface">Potdar Store Admin</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary" style="font-size: 20px;">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-label-md font-label-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-64" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 p-margin-desktop bg-surface-bright">
+<div class="max-w-4xl mx-auto">
+<!-- Page Header -->
+<div class="mb-unit-xl">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Notification Preferences</h1>
+<p class="font-body-lg text-body-lg text-secondary">Manage how and when you receive updates from Potdar Store.</p>
+</div>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-unit-lg">
+<!-- Main Settings Column -->
+<div class="md:col-span-8 space-y-unit-lg">
+<!-- Order Updates Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+                                        Order &amp; Delivery Updates
+                                    </h3>
+<p class="font-body-md text-body-md text-secondary">Stay informed about your order status, shipping details, and delivery confirmations.</p>
+</div>
+</div>
+<div class="mt-6 space-y-6">
+<!-- Toggle Item -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Order Confirmations</p>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Receive an email when your order is placed.</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle1" name="toggle1" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Shipping Updates</p>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Get notified when your items are dispatched.</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between pb-2">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Delivery Notifications</p>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Real-time alerts when your package arrives.</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle3" name="toggle3" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+</div>
+</div>
+<!-- Payment Updates Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg shadow-sm">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+                                        Payment &amp; Billing
+                                    </h3>
+<p class="font-body-md text-body-md text-secondary">Manage receipts, payment issues, and refund notifications.</p>
+</div>
+</div>
+<div class="mt-6 space-y-6">
+<!-- Toggle Item -->
+<div class="flex items-center justify-between border-b border-outline-variant pb-4">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Digital Receipts</p>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Receive invoices and receipts via email.</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle4" name="toggle4" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle4"></label>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between pb-2">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Refund Processed</p>
+<p class="font-body-md text-body-md text-secondary text-sm mt-1">Alerts when refunds are issued to your account.</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle5" name="toggle5" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-pointer" for="toggle5"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Column (Promotions & Security) -->
+<div class="md:col-span-4 space-y-unit-lg">
+<!-- Offers & Promotions -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-unit-lg">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">sell</span>
+                                Offers &amp; Promos
+                            </h3>
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Weekly Deals</p>
+</div>
+<div class="relative inline-block w-11 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="toggle6" name="toggle6" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer" for="toggle6"></label>
+</div>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">Get exclusive discounts and early access to sales events.</p>
+</div>
+<!-- Security Alerts (Always On) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-lg relative overflow-hidden">
+<!-- Subtle background pattern or accent line for security -->
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">shield</span>
+                                Security Alerts
+                            </h3>
+<div class="flex items-center justify-between mb-2">
+<p class="font-label-md text-label-md font-semibold text-on-surface">Account Activity</p>
+<div class="flex items-center gap-1 text-secondary bg-surface-container-high px-2 py-1 rounded-full text-xs font-semibold">
+<span class="material-symbols-outlined text-sm" style="font-size: 14px;">lock</span>
+                                    Always Enabled
+                                </div>
+</div>
+<p class="font-body-md text-body-md text-secondary text-sm">Critical alerts for new logins, password changes, and unusual account activity cannot be disabled for your safety.</p>
+</div>
+<!-- Save Actions -->
+<div class="pt-4 flex gap-4">
+<button class="flex-1 bg-surface-container-highest text-on-surface font-label-md text-label-md py-3 px-4 rounded-lg hover:bg-surface-variant transition-colors border border-outline-variant">
+                                Discard Changes
+                            </button>
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-3 px-4 rounded-lg hover:bg-primary-fixed-variant transition-colors">
+                                Save Preferences
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
