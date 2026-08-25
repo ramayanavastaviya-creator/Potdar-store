@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Admin - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "inverse-primary": "#b7c4ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#eeedf7",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1a1b22",
+                        "secondary": "#5f5e5e",
+                        "secondary-fixed": "#e5e2e1",
+                        "primary-fixed": "#dde1ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e8e7f1",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-container": "#656666",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "inverse-on-surface": "#f1effa",
+                        "surface": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "background": "#fbf8ff",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fbf8ff",
+                        "outline-variant": "#c3c5d9",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary": "#003ec7",
+                        "primary-container": "#0052ff",
+                        "surface-dim": "#dad9e3",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "surface-variant": "#e3e1ec",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#004ced",
+                        "on-surface": "#1a1b22",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface-variant": "#434656",
+                        "on-secondary-container": "#656464",
+                        "tertiary": "#4c4e4f",
+                        "secondary-container": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f4f2fd",
+                        "on-primary-container": "#dfe3ff",
+                        "on-primary-fixed": "#001452",
+                        "outline": "#737688",
+                        "on-tertiary-container": "#e4e5e5",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit-lg": "24px",
+                        "unit-xs": "4px",
+                        "unit-xl": "48px",
+                        "unit-sm": "8px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-md": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #0052FF;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #0052FF;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-16 pb-20">
+<!-- Top Navigation Bar (Mobile View of TopNavBar logic) -->
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center h-16 px-margin-mobile bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-3">
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden p-2 -ml-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-black text-on-surface dark:text-inverse-on-surface tracking-tight">Settings</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile py-unit-md overflow-y-auto">
+<!-- Profile Summary Card -->
+<section class="mb-unit-lg flex items-center gap-4 p-4 rounded-xl border border-outline-variant bg-surface-container-lowest">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="A close-up, highly detailed portrait of a professional store manager looking confidently at the camera. The lighting is bright and modern, suitable for a light-mode UI profile picture. The background is a soft, out-of-focus hint of a clean, premium grocery store aisle. High quality, realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHNkCZbw-N4UHEY1vKwOHLU6Mq68IpJ_ZEh1hRYIqBkrdbJQRjUmHIi8v626jb5uTdJiPCAPWVm_1qLPitLKh2CK6fsyPhrKj_JFZ8ZJk90hu6Z2fcz2r1CxvL9PGPmneoq7kd74hOTKqeNMaeqFTaYLjZbDU97ySqan3MlvXNERKIdqJDDeRgaoOVb9bdbEBDfMVjwdFh_Tn6TpIbZ8HkfaKfu3_duqcpRIz96s8M0u5cTh8SLymAcQ"/>
+</div>
+<div class="flex-grow">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Potdar Store</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Management Portal</p>
+</div>
+<button class="text-primary hover:bg-surface-container p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+</section>
+<!-- Settings List -->
+<div class="space-y-4">
+<!-- Group 1 -->
+<div class="rounded-xl border border-outline-variant bg-surface-container-lowest overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container transition-colors text-left border-b border-outline-variant border-opacity-50">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-primary" data-icon="storefront">storefront</span>
+<div>
+<p class="font-label-md text-label-md font-semibold">Store Information</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mt-0.5">Address, contact, description</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Expanded Store Hours Section (simulating a direct click to open context) -->
+<div class="p-4 bg-surface">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<h3 class="font-label-md text-label-md font-semibold">Store Hours</h3>
+</div>
+</div>
+<div class="space-y-4 pl-10">
+<!-- Monday -->
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md w-16">Mon</span>
+<div class="flex items-center gap-2">
+<input class="border border-outline-variant rounded px-2 py-1 text-sm bg-surface-container-lowest text-on-surface h-9 w-24" type="time" value="08:00"/>
+<span class="text-on-surface-variant">-</span>
+<input class="border border-outline-variant rounded px-2 py-1 text-sm bg-surface-container-lowest text-on-surface h-9 w-24" type="time" value="20:00"/>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md w-16">Tue</span>
+<div class="flex items-center gap-2">
+<input class="border border-outline-variant rounded px-2 py-1 text-sm bg-surface-container-lowest text-on-surface h-9 w-24" type="time" value="08:00"/>
+<span class="text-on-surface-variant">-</span>
+<input class="border border-outline-variant rounded px-2 py-1 text-sm bg-surface-container-lowest text-on-surface h-9 w-24" type="time" value="20:00"/>
+</div>
+</div>
+<!-- Sunday (Closed toggle example) -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant border-opacity-30">
+<span class="font-body-md text-body-md w-16">Sun</span>
+<div class="flex items-center justify-end w-full pr-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant mr-3">Closed</span>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant z-10 top-0 left-0 transition-all duration-300" id="toggle-sun" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-5 rounded-full bg-surface-variant cursor-pointer transition-colors duration-300" for="toggle-sun"></label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container transition-colors text-left border-t border-outline-variant border-opacity-50">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="local_shipping">local_shipping</span>
+<div>
+<p class="font-label-md text-label-md font-semibold">Delivery &amp; Pickup</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mt-0.5">Zones, fees, methods</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Group 2 -->
+<div class="rounded-xl border border-outline-variant bg-surface-container-lowest overflow-hidden">
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container transition-colors text-left border-b border-outline-variant border-opacity-50">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="payments">payments</span>
+<div>
+<p class="font-label-md text-label-md font-semibold">Payments</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mt-0.5">Gateways, taxes, currency</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 hover:bg-surface-container transition-colors text-left border-b border-outline-variant border-opacity-50">
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="manage_accounts">manage_accounts</span>
+<div>
+<p class="font-label-md text-label-md font-semibold">Staff Accounts</p>
+<p class="font-body-md text-body-md text-sm text-on-surface-variant mt-0.5">Roles and permissions</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- Group 3 (Destructive/Logout) -->
+<div class="pt-4">
+<button class="w-full flex items-center justify-center gap-2 p-4 rounded-xl border border-error bg-error-container text-on-error-container font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Sign Out
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile substitute for SideNavBar) -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center h-20 bg-surface-container-lowest border-t border-outline-variant pb-safe">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Products</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center w-full h-full text-primary font-bold" href="#">
+<div class="bg-primary-container text-on-primary-container rounded-full px-4 py-1 mb-1 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill">settings</span>
+</div>
+<span class="font-label-sm text-[10px] uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+</body></html>

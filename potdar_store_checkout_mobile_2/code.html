@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e3e1ec",
+                        "outline": "#737688",
+                        "surface-dim": "#dad9e3",
+                        "primary": "#003ec7",
+                        "secondary-container": "#e5e2e1",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-primary-fixed": "#001452",
+                        "on-secondary-container": "#656464",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-tertiary-container": "#e4e5e5",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-tint": "#004ced",
+                        "background": "#fbf8ff",
+                        "inverse-on-surface": "#f1effa",
+                        "secondary": "#5f5e5e",
+                        "tertiary": "#4c4e4f",
+                        "surface-container": "#eeedf7",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf8ff",
+                        "surface-container-high": "#e8e7f1",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf8ff",
+                        "inverse-surface": "#2f3038",
+                        "on-primary-container": "#dfe3ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#c3c5d9",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1b22",
+                        "surface-container-highest": "#e3e1ec",
+                        "primary-fixed": "#dde1ff",
+                        "on-background": "#1a1b22",
+                        "surface-container-low": "#f4f2fd",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#0052ff",
+                        "tertiary-container": "#656666",
+                        "on-surface-variant": "#434656"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-lg": "24px",
+                        "unit-md": "16px",
+                        "gutter": "24px",
+                        "unit-xs": "4px",
+                        "unit-sm": "8px",
+                        "margin-desktop": "64px",
+                        "unit-xl": "48px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-24">
+<!-- Top Navigation (Transactional context: simplified) -->
+<header class="bg-surface sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile h-20 border-b border-outline-variant">
+<a class="text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-md text-label-md">Back to Cart</span>
+</a>
+<div class="font-headline-md text-headline-md font-bold text-primary">Checkout</div>
+<div class="w-8"></div> <!-- Spacer for centering -->
+</header>
+<main class="flex-grow px-margin-mobile py-unit-lg max-w-lg mx-auto w-full flex flex-col gap-unit-md">
+<!-- Step 1: Delivery Address (Active) -->
+<section class="bg-surface rounded-xl border-2 border-primary overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.05)]">
+<div class="p-unit-md flex justify-between items-center bg-surface-container-low cursor-pointer">
+<div class="flex items-center gap-unit-sm">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm">1</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Delivery Address</h2>
+</div>
+<span class="material-symbols-outlined text-primary">expand_less</span>
+</div>
+<div class="p-unit-md border-t border-outline-variant space-y-unit-md">
+<div class="space-y-4">
+<div class="flex flex-col">
+<label class="font-label-md text-label-md text-on-surface-variant mb-1" for="address">Full Address</label>
+<input class="w-full px-4 py-3 bg-surface border border-primary rounded-lg focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface" id="address" type="text" value="123 High Street, London, E1 6AN"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<label class="font-label-md text-label-md text-on-surface-variant mb-1" for="apt">Apt/Suite</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface" id="apt" placeholder="e.g. 4B" type="text"/>
+</div>
+<div class="flex flex-col">
+<label class="font-label-md text-label-md text-on-surface-variant mb-1" for="instructions">Instructions</label>
+<input class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md text-on-surface" id="instructions" placeholder="Leave at door" type="text"/>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-on-primary-fixed-variant transition-colors">Continue to Delivery</button>
+</div>
+</section>
+<!-- Step 2: Delivery Options (Inactive) -->
+<section class="bg-surface rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-unit-md flex justify-between items-center cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center gap-unit-sm">
+<div class="w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">2</div>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">Delivery Options</h2>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</section>
+<!-- Step 3: Payment (Inactive) -->
+<section class="bg-surface rounded-xl border border-outline-variant overflow-hidden">
+<div class="p-unit-md flex justify-between items-center cursor-pointer hover:bg-surface-container-lowest transition-colors">
+<div class="flex items-center gap-unit-sm">
+<div class="w-6 h-6 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm">3</div>
+<h2 class="font-headline-md text-headline-md text-on-surface-variant">Payment</h2>
+</div>
+<span class="material-symbols-outlined text-outline">expand_more</span>
+</div>
+</section>
+<!-- Order Summary Preview -->
+<section class="mt-unit-md bg-surface-container-low p-unit-md rounded-xl border border-outline-variant">
+<h3 class="font-headline-md text-headline-md mb-unit-sm">Order Summary</h3>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant">
+<span>4 items</span>
+<span>£42.50</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-on-surface-variant mt-2">
+<span>Delivery today</span>
+<span>£2.99</span>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant p-margin-mobile shadow-[0px_-4px_20px_rgba(0,0,0,0.05)] z-50">
+<div class="max-w-lg mx-auto flex justify-between items-center">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Total Amount</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">£45.49</p>
+</div>
+<button class="bg-surface-variant text-on-surface-variant font-label-md text-label-md px-8 py-3 rounded-lg cursor-not-allowed" disabled="">Place Order</button>
+</div>
+</div>
+</body></html>

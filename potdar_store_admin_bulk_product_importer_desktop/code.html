@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bulk Product Import - Potdar Store Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#001452",
+                      "on-secondary-container": "#656464",
+                      "on-tertiary": "#ffffff",
+                      "on-background": "#1a1b22",
+                      "primary": "#003ec7",
+                      "surface-dim": "#dad9e3",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#656666",
+                      "surface-tint": "#004ced",
+                      "primary-container": "#0052ff",
+                      "surface-container-high": "#e8e7f1",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-container-highest": "#e3e1ec",
+                      "on-primary-fixed-variant": "#0038b6",
+                      "surface-container-low": "#f4f2fd",
+                      "on-surface": "#1a1b22",
+                      "on-secondary-fixed-variant": "#474646",
+                      "tertiary": "#4c4e4f",
+                      "inverse-on-surface": "#f1effa",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "surface-container": "#eeedf7",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface": "#fbf8ff",
+                      "secondary-container": "#e5e2e1",
+                      "surface-bright": "#fbf8ff",
+                      "inverse-surface": "#2f3038",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-variant": "#e3e1ec",
+                      "on-surface-variant": "#434656",
+                      "secondary": "#5f5e5e",
+                      "outline-variant": "#c3c5d9",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#dfe3ff",
+                      "on-tertiary-container": "#e4e5e5",
+                      "outline": "#737688",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "background": "#fbf8ff",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "primary-fixed": "#dde1ff",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "inverse-primary": "#b7c4ff",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-xl": "48px",
+                      "gutter": "24px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "64px",
+                      "unit-xs": "4px",
+                      "container-max": "1280px",
+                      "margin-mobile": "20px",
+                      "unit-sm": "8px",
+                      "unit-md": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col z-50 h-screen w-64 border-r border-outline-variant bg-surface-container-lowest fixed left-0 top-0">
+<div class="p-6 border-b border-outline-variant">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Potdar Store</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Management Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto py-4">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low active:opacity-90 active:scale-[0.99] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2" data-weight="fill">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full">
+<!-- TopNavBar -->
+<header class="hidden md:flex justify-between items-center h-16 px-gutter bg-surface border-b border-outline-variant w-full sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<!-- Search could go here -->
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-100 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-100 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-100 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img alt="Administrator Avatar" class="w-full h-full object-cover" data-alt="A small, professional headshot avatar of an administrator in a high-key lighting, minimalist style, suitable for a premium dashboard header." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHCkqh_kSN0RqhmSAJTcYDdqMZe9e_BSG6JSbWC50wywO_vCbkw_alcOsBdjPLNagdoIQaTU5JVth8g7YB6mkNpZjDGcBV4N-ML_F53eNHRzPPlz5WloYCk8kzaORELIl1fEX-GKLAdThUy4Eb5B5O3aFe1Yr_mgWOhH9CZKc_TuVWHZWPzdHErMBPUsqboJ3cGiPRL9ufik1WHy22JAm899fu_ZAWlWIwICBHAy7DkXB6w6_gpoeyUg"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface-low p-4 md:p-8">
+<div class="max-w-[1000px] mx-auto pb-32"> <!-- Padding bottom for fixed footer -->
+<!-- Page Header -->
+<div class="mb-unit-xl">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md mb-2">
+<a class="hover:text-primary transition-colors" href="#">Products</a>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-medium">Bulk Import</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg font-display-lg text-on-surface mb-2">Bulk Product Import</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Upload and map your product data to quickly update or expand your store catalog.</p>
+</div>
+<!-- Wizard Steps Container -->
+<div class="space-y-8">
+<!-- Step 1: Upload -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 md:p-8 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary-container"></div>
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-on-surface-variant font-bold text-sm">1</span>
+                                Upload File
+                            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 ml-10">Select a CSV or XLSX file containing your product information.</p>
+</div>
+<div class="ml-10 border-2 border-dashed border-outline-variant hover:border-primary-container transition-colors rounded-lg bg-surface-container-low p-10 flex flex-col items-center justify-center text-center cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant group-hover:text-primary-container" data-icon="upload_file">upload_file</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Drag and drop your file here</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Supported formats: CSV, XLSX. Maximum file size: 50MB.</p>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-primary-container text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-opacity focus:ring-2 focus:ring-primary-container focus:ring-offset-2">
+                                    Browse Files
+                                </button>
+<button class="px-6 py-3 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors">
+                                    Download Template
+                                </button>
+</div>
+</div>
+</section>
+<!-- Step 2: Mapping -->
+<section class="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 md:p-8 shadow-sm relative opacity-50 pointer-events-none"> <!-- Dimmed to show it's next -->
+<div class="mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-on-surface-variant font-bold text-sm">2</span>
+                                Field Mapping
+                            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 ml-10">Match columns from your uploaded file to Potdar Store fields.</p>
+</div>
+<!-- Visual placeholder for mapping area -->
+<div class="ml-10 bg-surface-container rounded-lg h-32 flex items-center justify-center border border-outline-variant border-dashed">
+<p class="text-on-surface-variant font-body-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="pending">pending</span>
+                                 Upload a file to begin mapping
+                             </p>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 md:left-64 right-0 bg-surface-container-lowest border-t border-outline-variant p-4 px-gutter shadow-[0_-4px_20px_rgba(0,0,0,0.05)] z-50">
+<div class="max-w-[1000px] mx-auto flex justify-between items-center">
+<button class="px-6 py-3 bg-surface-container-lowest text-on-surface font-label-md text-label-md rounded border border-outline-variant hover:bg-surface-container-low transition-colors">
+                    Cancel
+                </button>
+<div class="flex gap-4">
+<button class="px-6 py-3 bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md rounded border border-outline-variant cursor-not-allowed opacity-50">
+                        Previous
+                    </button>
+<button class="px-6 py-3 bg-primary-container text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-opacity shadow-sm flex items-center gap-2">
+                        Continue to Mapping
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

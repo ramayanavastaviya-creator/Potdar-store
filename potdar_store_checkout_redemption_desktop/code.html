@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store - Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        'potdar-blue': '#1a56db',
+                        'surface': '#ffffff',
+                        'on-surface': '#111827',
+                        'surface-variant': '#f3f4f6',
+                        'on-surface-variant': '#4b5563',
+                        'outline': '#d1d5db',
+                        'primary-container': '#dbeafe',
+                        'on-primary-container': '#1e3a8a',
+                        'error': '#dc2626'
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Public Sans", "sans-serif"],
+                        "display": ["Public Sans", "sans-serif"],
+                        "body": ["Public Sans", "sans-serif"],
+                        "label": ["Public Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface text-potdar-blue font-headline text-lg flex justify-between items-center w-full px-4 h-16 max-w-full mx-auto border-b border-outline sticky top-0 z-50">
+<div class="font-bold text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-potdar-blue">storefront</span>
+            Potdar Store
+        </div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-200" href="#">Shop</a>
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-200" href="#">Rewards</a>
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-200" href="#">History</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 lg:py-12">
+<div class="mb-8">
+<h1 class="text-3xl font-bold font-headline mb-2">Checkout</h1>
+<p class="text-on-surface-variant">Review your items and complete your purchase.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Shipping & Payment -->
+<div class="lg:col-span-7 space-y-6">
+<!-- Shipping Address -->
+<section class="bg-surface rounded-xl p-6 border border-outline shadow-sm">
+<h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-potdar-blue">local_shipping</span>
+                        Shipping Address
+                    </h2>
+<div class="bg-surface-variant rounded-lg p-4 border border-outline">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-medium text-on-surface">Ramesh Potdar</p>
+<p class="text-on-surface-variant mt-1">123 Market Street, Suite 400</p>
+<p class="text-on-surface-variant">Mumbai, MH 400001</p>
+<p class="text-on-surface-variant">India</p>
+</div>
+<button class="text-potdar-blue font-medium text-sm hover:underline">Edit</button>
+</div>
+</div>
+</section>
+<!-- Payment Method -->
+<section class="bg-surface rounded-xl p-6 border border-outline shadow-sm">
+<h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-potdar-blue">payment</span>
+                        Payment Method
+                    </h2>
+<div class="bg-surface-variant rounded-lg p-4 border border-outline">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-12 h-8 bg-surface border border-outline rounded flex items-center justify-center font-bold text-xs">VISA</div>
+<div>
+<p class="font-medium text-on-surface">Visa ending in 4242</p>
+<p class="text-on-surface-variant text-sm">Expires 12/25</p>
+</div>
+</div>
+<button class="text-potdar-blue font-medium text-sm hover:underline">Edit</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-5">
+<div class="bg-surface rounded-xl border border-outline shadow-sm sticky top-24">
+<div class="p-6">
+<h2 class="text-xl font-semibold mb-6">Order Summary</h2>
+<!-- Items list -->
+<div class="space-y-4 mb-6">
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist product shot of a premium ceramic coffee mug on a pure white background, soft studio lighting highlighting its smooth texture and elegant curved handle, high resolution, modern ecommerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiH1hXnQbAH-7wX1L4Y9xJa-I2Iux1l1oICNgt86CNXkoCnZAE6j56XVFf_2wbzaNVWSU0qMWfvL4fmVR1WI_ySKi3NBZ3pOVkgjI-2i4eu5W3KjYMIZ3CLRjEHweqk5K55FMF6UO8G-O8ExQbst-tygHWaMq_uODSe8b4BjQ6uSb7naISwQ-ZeVVAcqVh1dv4qXj-2h4ztDU53j9zLnFvqK7s16DL4XRbDOchTSsT8caZP625MjqEnw"/>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-on-surface">Premium Ceramic Mug</p>
+<p class="text-on-surface-variant text-sm">Qty: 2</p>
+</div>
+<div class="font-medium">₹500</div>
+</div>
+<div class="flex gap-4">
+<div class="w-16 h-16 rounded-lg bg-surface-variant overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist product shot of a stylish minimalist desk lamp with a matte black finish, positioned on a light gray surface, soft directional lighting creating subtle shadows, high end retail presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTTKadCGdSCmg2qZTF6xeeiEGPpdyq-Tx6J2ZO3HnD6HPfbNoRuj58Bko_xOkwXvxcZbyAWO1oHTQ9XMH_O_c3Nsr39IZ9xbJu-1yyjlNEUqQr3MBKXEnL-RjlJA-nZG7cO9qvqQnm3ZqUCgqLF_2e6fpzcUiMVaXe-Le7moDLp8jAIPjgrtXtGRsGtdReUyPLG5YqtOEIjWUPkRo8pZDbvIJJRslqi_Eu-J7qV17g_TVGTuT48iR6Lg"/>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-on-surface">Minimalist Desk Lamp</p>
+<p class="text-on-surface-variant text-sm">Qty: 1</p>
+</div>
+<div class="font-medium">₹1,200</div>
+</div>
+</div>
+<hr class="border-outline mb-6"/>
+<!-- Loyalty Points Section (The Core Feature) -->
+<div class="mb-6 bg-primary-container/20 rounded-lg p-4 border border-potdar-blue/20">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-potdar-blue text-xl">stars</span>
+<div>
+<h3 class="font-medium text-on-surface">Use Loyalty Points</h3>
+<p class="text-sm text-on-surface-variant">Available: <span class="font-semibold text-potdar-blue">120 points</span></p>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="pointsToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-outline peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-primary-container rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-potdar-blue"></div>
+</label>
+</div>
+<p class="text-xs text-on-surface-variant mt-1">1 point = ₹1. Apply maximum available points to your order.</p>
+</div>
+<!-- Totals -->
+<div class="space-y-3 mb-6">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal</span>
+<span>₹1,700</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Shipping</span>
+<span>₹50</span>
+</div>
+<!-- Dynamically shown discount row -->
+<div class="flex justify-between text-potdar-blue font-medium hidden" id="pointsDiscountRow">
+<span>Points Applied (120)</span>
+<span>- ₹120</span>
+</div>
+<hr class="border-outline my-2"/>
+<div class="flex justify-between font-bold text-lg text-on-surface">
+<span>Total</span>
+<span id="finalTotal">₹1,750</span>
+</div>
+</div>
+<!-- Checkout Button -->
+<button class="w-full bg-potdar-blue text-white py-3 px-4 rounded-lg font-medium hover:bg-potdar-blue/90 transition-colors focus:ring-4 focus:ring-primary-container outline-none flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">lock</span>
+                            Place Order
+                        </button>
+<p class="text-center text-xs text-on-surface-variant mt-4 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">verified_user</span>
+                            Secure encrypted checkout
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface text-potdar-blue font-label text-sm flex flex-col md:flex-row justify-between items-center px-4 py-6 w-full border-t border-outline mt-auto">
+<div class="font-headline font-bold text-on-surface mb-4 md:mb-0">
+            © 2024 Potdar Store. Premium Loyalty &amp; Rewards.
+        </div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-150" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-150" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-potdar-blue transition-colors duration-150" href="#">Help Center</a>
+</div>
+</footer>
+<!-- Interactive Script for the Toggle -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('pointsToggle');
+            const discountRow = document.getElementById('pointsDiscountRow');
+            const finalTotal = document.getElementById('finalTotal');
+            
+            const baseTotal = 1750;
+            const pointsValue = 120;
+            
+            toggle.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    discountRow.classList.remove('hidden');
+                    const newTotal = baseTotal - pointsValue;
+                    finalTotal.textContent = `₹${newTotal.toLocaleString('en-IN')}`;
+                    
+                    // Add a subtle highlight animation to total
+                    finalTotal.classList.add('text-potdar-blue');
+                    setTimeout(() => {
+                        finalTotal.classList.remove('text-potdar-blue');
+                    }, 500);
+                } else {
+                    discountRow.classList.add('hidden');
+                    finalTotal.textContent = `₹${baseTotal.toLocaleString('en-IN')}`;
+                }
+            });
+        });
+    </script>
+</body></html>

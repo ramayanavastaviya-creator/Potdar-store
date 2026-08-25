@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Admin - Reports &amp; Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#5f5e5e",
+                    "surface-tint": "#004ced",
+                    "primary": "#003ec7",
+                    "surface-dim": "#dad9e3",
+                    "on-surface": "#1a1b22",
+                    "tertiary": "#4c4e4f",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "surface-bright": "#fbf8ff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#b7c4ff",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "outline": "#737688",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary-fixed": "#dde1ff",
+                    "on-primary-fixed-variant": "#0038b6",
+                    "surface-variant": "#e3e1ec",
+                    "surface-container": "#eeedf7",
+                    "primary-container": "#0052ff",
+                    "surface-container-highest": "#e3e1ec",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-low": "#f4f2fd",
+                    "on-primary-container": "#dfe3ff",
+                    "background": "#fbf8ff",
+                    "on-secondary-container": "#656464",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#474646",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#b7c4ff",
+                    "surface-container-high": "#e8e7f1",
+                    "tertiary-container": "#656666",
+                    "outline-variant": "#c3c5d9",
+                    "inverse-on-surface": "#f1effa",
+                    "inverse-surface": "#2f3038",
+                    "on-background": "#1a1b22",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#e4e5e5",
+                    "on-surface-variant": "#434656",
+                    "surface": "#fbf8ff",
+                    "on-primary-fixed": "#001452",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#e5e2e1",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-lg": "24px",
+                    "unit-xs": "4px",
+                    "container-max": "1280px",
+                    "unit-xl": "48px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "unit-sm": "8px",
+                    "unit-md": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 flex justify-between items-center h-16 px-gutter ml-64 w-[calc(100%-16rem)] bg-surface border-b border-outline-variant z-40">
+<div class="flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant w-96">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder:text-on-surface-variant text-on-surface p-0" placeholder="Search reports, products, or orders..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">help</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional, minimalist headshot of a young Indian store administrator wearing a neat white shirt, set against a clean, light grey studio background. The lighting is soft and bright, reflecting a modern, efficient e-commerce aesthetic. High quality, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzHDjNHb5k-QH1raUxJyi2txiVJZcOi3ZpLnv-UEzjhTjjj-hq9m0KX7f_EVNHRGM-k6J6oHTfH5XFptMt-cSMQVSyz7NTS77yrAfdudp1lM3MrHM71Wlw-leAieiZulUd3qGtnB_MkiXyHJYv5nwt-iyj54ksmfUdOIFSAUrnMcLG9uBGq7xgK6Hye1lsRPiTFbVejnNMD5qg3Ky-9zDBqPFNeTnSFSNNMngMGxlhmTcm4UXLB1KB0w"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full flex flex-col z-50 w-64 bg-surface-container-lowest border-r border-outline-variant">
+<div class="p-6 border-b border-outline-variant">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Potdar Store</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Management Portal</p>
+</div>
+<div class="flex-1 py-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-primary font-bold border-r-4 border-primary bg-surface-container-low" href="#">
+<span class="material-symbols-outlined icon-filled">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 pt-24 px-margin-desktop pb-margin-desktop">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-unit-lg gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Reports &amp; Analytics</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Real-time performance metrics and automated data reports</p>
+<p class="font-label-sm text-label-sm text-outline mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">update</span> Last updated: Just now
+                </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 cursor-pointer hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" style="font-size: 18px;">calendar_month</span>
+<span class="font-label-md text-label-md text-on-surface mr-4">This Month</span>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 18px;">expand_more</span>
+</div>
+<button class="flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary transition-colors hover:text-on-primary">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                    Export
+                </button>
+</div>
+</div>
+<!-- Overview Cards -->
+<div class="grid grid-cols-12 gap-gutter mb-unit-lg">
+<!-- Card 1 -->
+<div class="col-span-12 md:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-md hover:border-primary transition-colors flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Sales</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">payments</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold">₹1,24,500</div>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-primary icon-filled" style="font-size: 16px;">trending_up</span>
+<span class="font-label-sm text-label-sm text-primary">+12.5%</span>
+<span class="font-label-sm text-label-sm text-outline ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="col-span-12 md:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-md hover:border-primary transition-colors flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Total Orders</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">shopping_bag</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold">342</div>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-primary icon-filled" style="font-size: 16px;">trending_up</span>
+<span class="font-label-sm text-label-sm text-primary">+5.2%</span>
+<span class="font-label-sm text-label-sm text-outline ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="col-span-12 md:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-md hover:border-primary transition-colors flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Avg. Order Value</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">receipt_long</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold">₹364</div>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-error icon-filled" style="font-size: 16px;">trending_down</span>
+<span class="font-label-sm text-label-sm text-error">-1.2%</span>
+<span class="font-label-sm text-label-sm text-outline ml-1">vs last month</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="col-span-12 md:col-span-3 bg-surface-container-lowest border border-outline-variant rounded-xl p-unit-md hover:border-primary transition-colors flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Cancellation Rate</span>
+<div class="w-8 h-8 rounded-full bg-error-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" style="font-size: 18px;">cancel</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-bold">2.1%</div>
+<div class="flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-primary icon-filled" style="font-size: 16px;">trending_down</span>
+<span class="font-label-sm text-label-sm text-primary">-0.5%</span>
+<span class="font-label-sm text-label-sm text-outline ml-1">Improvement</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sales Performance Bento -->
+<div class="grid grid-cols-12 gap-gutter mb-unit-lg">
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Sales Performance</h3>
+<div class="flex gap-2">
+<button class="font-label-md text-label-md text-primary hover:bg-surface-container-low px-3 py-1 rounded-lg transition-colors">View Full Report</button>
+<button class="p-1 rounded-lg hover:bg-surface-container transition-colors flex items-center justify-center border border-transparent hover:border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 20px;">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Pseudo Chart Area -->
+<div class="flex-1 relative min-h-[300px] border-b border-l border-outline-variant ml-8 mb-6 mt-4">
+<!-- Y Axis Labels -->
+<div class="absolute -left-10 top-0 bottom-0 flex flex-col justify-between text-label-sm font-label-sm text-outline py-2">
+<span>4k</span>
+<span>3k</span>
+<span>2k</span>
+<span>1k</span>
+<span>0</span>
+</div>
+<!-- Grid Lines -->
+<div class="absolute inset-0 flex flex-col justify-between py-2 w-full">
+<div class="w-full border-b border-outline-variant/30"></div>
+<div class="w-full border-b border-outline-variant/30"></div>
+<div class="w-full border-b border-outline-variant/30"></div>
+<div class="w-full border-b border-outline-variant/30"></div>
+<div class="w-full border-b border-transparent"></div>
+</div>
+<!-- Decorative Line Graph representation (SVG for aesthetic) -->
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<lineargradient id="lineGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#003ec7" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#003ec7" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 L10,75 L20,85 L30,60 L40,65 L50,40 L60,50 L70,30 L80,35 L90,20 L100,10 L100,100 L0,100 Z" fill="url(#lineGrad)"></path>
+<path d="M0,80 L10,75 L20,85 L30,60 L40,65 L50,40 L60,50 L70,30 L80,35 L90,20 L100,10" fill="none" stroke="#003ec7" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+<!-- Data Points -->
+<circle cx="50" cy="40" fill="#ffffff" r="3" stroke="#003ec7" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+<circle cx="70" cy="30" fill="#ffffff" r="3" stroke="#003ec7" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+<circle cx="90" cy="20" fill="#ffffff" r="3" stroke="#003ec7" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+</svg>
+<!-- X Axis Labels -->
+<div class="absolute -bottom-8 left-0 right-0 flex justify-between text-label-sm font-label-sm text-outline px-2">
+<span>W1</span>
+<span>W2</span>
+<span>W3</span>
+<span>W4</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Sales Breakdown</h3>
+<div class="space-y-4 flex-1">
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant/50">
+<span class="font-body-md text-body-md text-on-surface-variant">Gross Sales</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">₹1,32,000</span>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant/50">
+<span class="font-body-md text-body-md text-on-surface-variant">Discounts</span>
+<span class="font-body-md text-body-md text-error">-₹4,500</span>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant/50">
+<span class="font-body-md text-body-md text-on-surface-variant">Delivery Charges</span>
+<span class="font-body-md text-body-md text-on-surface">+₹1,200</span>
+</div>
+<div class="flex justify-between items-center pb-3 border-b border-outline-variant/50">
+<span class="font-body-md text-body-md text-on-surface-variant">Taxes</span>
+<span class="font-body-md text-body-md text-on-surface">-₹4,200</span>
+</div>
+</div>
+<div class="pt-4 mt-auto">
+<div class="flex justify-between items-center bg-surface-container p-4 rounded-lg">
+<span class="font-label-md text-label-md text-on-surface font-bold">Net Sales</span>
+<span class="font-headline-md text-headline-md text-primary font-bold">₹1,24,500</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

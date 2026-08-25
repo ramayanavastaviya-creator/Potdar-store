@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Help Center - Potdar Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4c4e4f",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c5d9",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface-variant": "#434656",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-dim": "#dad9e3",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary-container": "#e4e5e5",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "tertiary-container": "#656666",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f4f2fd",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-variant": "#e3e1ec",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "background": "#fbf8ff",
+                        "surface-container-highest": "#e3e1ec",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737688",
+                        "on-surface": "#1a1b22",
+                        "surface": "#fbf8ff",
+                        "primary": "#003ec7",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f1effa",
+                        "secondary-container": "#e5e2e1",
+                        "surface-container": "#eeedf7",
+                        "surface-container-high": "#e8e7f1",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed": "#001452",
+                        "surface-tint": "#004ced",
+                        "inverse-surface": "#2f3038",
+                        "on-primary-container": "#dfe3ff",
+                        "on-background": "#1a1b22",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-container": "#0052ff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#656464"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit-xl": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "unit-sm": "8px",
+                        "margin-mobile": "20px",
+                        "unit-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hide scrollbar for category pills */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .faq-item[open] .faq-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background antialiased min-h-screen pb-32">
+<!-- Mobile Header (Back Button + Title) -->
+<header class="sticky top-0 z-50 bg-surface h-16 flex items-center px-margin-mobile">
+<button class="w-11 h-11 flex items-center justify-center -ml-2 text-on-surface hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="ml-2 font-headline-md text-headline-md text-on-surface">Help Center</h1>
+</header>
+<main class="px-margin-mobile pt-unit-md space-y-unit-xl">
+<!-- Search Section -->
+<section>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-unit-sm">How can we help you?</h2>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-outline-variant rounded-lg leading-5 bg-surface-container-lowest placeholder-outline focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary font-body-md text-body-md sm:text-sm" placeholder="Search for help..." type="text"/>
+</div>
+</section>
+<!-- Categories (Horizontal Pills) -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit-md">Categories</h3>
+<div class="flex overflow-x-auto space-x-unit-sm pb-2 no-scrollbar">
+<button class="flex-shrink-0 bg-primary-container text-on-primary-container font-label-md text-label-md px-4 py-2 rounded-full whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary">
+                    All Topics
+                </button>
+<button class="flex-shrink-0 bg-surface-container-high text-on-surface font-label-md text-label-md px-4 py-2 rounded-full whitespace-nowrap border border-transparent hover:border-outline-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                    Orders &amp; Tracking
+                </button>
+<button class="flex-shrink-0 bg-surface-container-high text-on-surface font-label-md text-label-md px-4 py-2 rounded-full whitespace-nowrap border border-transparent hover:border-outline-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                    Returns &amp; Refunds
+                </button>
+<button class="flex-shrink-0 bg-surface-container-high text-on-surface font-label-md text-label-md px-4 py-2 rounded-full whitespace-nowrap border border-transparent hover:border-outline-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                    Account &amp; Payment
+                </button>
+<button class="flex-shrink-0 bg-surface-container-high text-on-surface font-label-md text-label-md px-4 py-2 rounded-full whitespace-nowrap border border-transparent hover:border-outline-variant transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                    Delivery Issues
+                </button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-unit-md">Frequently Asked Questions</h3>
+<div class="space-y-unit-sm">
+<details class="faq-item group border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<summary class="flex justify-between items-center cursor-pointer p-4 font-label-md text-label-md text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors min-h-[44px]">
+                        Where is my order?
+                        <span class="faq-icon material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-4 pt-0 font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest">
+                        You can track your order status in the 'Orders' section of your account. Once your order is dispatched, you will receive a tracking link via SMS and email.
+                    </div>
+</details>
+<details class="faq-item group border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<summary class="flex justify-between items-center cursor-pointer p-4 font-label-md text-label-md text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors min-h-[44px]">
+                        How do I return an item?
+                        <span class="faq-icon material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-4 pt-0 font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest">
+                        To return an item, go to your order history, select the order containing the item, and tap 'Return Item'. Follow the instructions to schedule a pickup. Perishable items cannot be returned.
+                    </div>
+</details>
+<details class="faq-item group border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<summary class="flex justify-between items-center cursor-pointer p-4 font-label-md text-label-md text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors min-h-[44px]">
+                        What payment methods do you accept?
+                        <span class="faq-icon material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-4 pt-0 font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest">
+                        We accept all major credit and debit cards, UPI, popular digital wallets, and Cash on Delivery for eligible areas.
+                    </div>
+</details>
+<details class="faq-item group border border-outline-variant rounded-lg bg-surface-container-lowest overflow-hidden">
+<summary class="flex justify-between items-center cursor-pointer p-4 font-label-md text-label-md text-on-surface focus:outline-none focus:bg-surface-container-low transition-colors min-h-[44px]">
+                        How do I change my delivery address?
+                        <span class="faq-icon material-symbols-outlined text-outline transition-transform duration-200" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-4 pt-0 font-body-md text-body-md text-on-surface-variant bg-surface-container-lowest">
+                        You can manage your delivery addresses in the 'Account' section. If you need to change the address for an active order, please contact support immediately.
+                    </div>
+</details>
+</div>
+</section>
+<!-- Prominent Contact Action -->
+<section class="bg-surface-container p-6 rounded-xl text-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary mb-2 text-4xl" data-icon="support_agent">support_agent</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Still need help?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our support team is here to assist you with any issues.</p>
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-3 px-4 rounded-lg flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary min-h-[44px]">
+                Raise a Support Request
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (From JSON, suppressed FAB as this is a transactional/settings flow, but keeping Nav if considered a top-level support hub. Assuming Help Center might be accessible via Account, so typically we might hide bottom nav, but instructions say to render Nav if it's a destination. I will suppress BottomNav to focus on the canvas as it has a "Back" button implying departure from main flow.) -->
+<!-- Suppressed BottomNavBar based on "Task-Focused: Any sub-page featuring a 'Close' or 'Back' action that implies a temporary departure from the main navigation flow." -->
+</body></html>

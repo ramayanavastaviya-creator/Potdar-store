@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Products - Potdar Store Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed": "#001452",
+                        "secondary-fixed": "#e5e2e1",
+                        "outline-variant": "#c3c5d9",
+                        "inverse-on-surface": "#f1effa",
+                        "background": "#fbf8ff",
+                        "surface-container": "#eeedf7",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#5f5e5e",
+                        "secondary-container": "#e5e2e1",
+                        "inverse-surface": "#2f3038",
+                        "surface-tint": "#004ced",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f4f2fd",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "primary-container": "#0052ff",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "outline": "#737688",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-container": "#dfe3ff",
+                        "on-surface": "#1a1b22",
+                        "on-secondary-container": "#656464",
+                        "tertiary": "#4c4e4f",
+                        "primary": "#003ec7",
+                        "on-surface-variant": "#434656",
+                        "surface-variant": "#e3e1ec",
+                        "surface-dim": "#dad9e3",
+                        "tertiary-container": "#656666",
+                        "surface-container-highest": "#e3e1ec",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf8ff",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "on-background": "#1a1b22",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#e4e5e5",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-high": "#e8e7f1",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b7c4ff",
+                        "surface": "#fbf8ff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit-xl": "48px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-lg": "24px",
+                        "container-max": "1280px",
+                        "unit-md": "16px",
+                        "margin-mobile": "20px",
+                        "unit-sm": "8px",
+                        "unit-xs": "4px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fbf8ff; color: #1a1b22; margin: 0; padding: 0; display: flex; min-height: 100vh; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .filled-icon { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex w-full">
+<!-- SideNavBar (JSON Context) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-50 w-64 border-r border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-inverse-surface">
+<div class="p-6 border-b border-outline-variant dark:border-outline">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Potdar Store</h1>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Management Portal</p>
+</div>
+<nav class="flex-1 overflow-y-auto py-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-secondary-container" href="#">
+<span class="material-symbols-outlined filled-icon" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-outline-variant dark:border-outline">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 min-h-screen flex flex-col w-[calc(100%-16rem)]">
+<!-- TopNavBar (JSON Context) -->
+<header class="flex justify-between items-center h-16 px-gutter border-b border-outline-variant dark:border-outline bg-surface dark:bg-surface-dim sticky top-0 z-40 w-full">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-96 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search products, orders, customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant hidden sm:block"></div>
+<button class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<img alt="Administrator Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a business administrator in a modern, well-lit office setting. High quality, light mode aesthetic, crisp and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLiptKZB2mX_Qq8Y8i-x6Jd3OYB7gAyRVAcYUTDPbAFJs-s1htKWBXOUJZazwZ6QBX5AN4aydO4pl24g7BeDb9XMQQXrA1evzezT1oFjYL4Z2ex3aPdeiuwgnYOlqxrZu5iOYcLM456YS4vBw3CBkzls747eOQ_LZtXXw9Je8c8Ada-GtNbYZbfDIgdXsTR-BrcEO2ZKyBhCYekp98rcZqcsgWOwr6P3ghGyHSe__TwoLEhAZAZ64Whg"/>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-margin-desktop w-full max-w-[1600px] mx-auto flex-1">
+<!-- Page Header & Actions -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-unit-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Products</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage your store's inventory, pricing, and availability.</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-10 px-4 flex items-center gap-2 bg-surface-container-lowest border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Export
+                    </button>
+<button class="h-10 px-5 flex items-center gap-2 bg-primary-container text-on-primary font-label-md text-label-md font-semibold rounded-lg hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add New Product
+                    </button>
+</div>
+</div>
+<!-- Filters Area (Glassmorphism inspired light card) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 mb-unit-lg flex flex-wrap gap-4 items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">filter_list</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Filters:</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 bg-surface-container border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 hover:border-primary hover:text-primary transition-colors">
+                        Category: All
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 hover:border-primary hover:text-primary transition-colors">
+                        Brand: All
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 hover:border-primary hover:text-primary transition-colors">
+                        Status: Active
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="px-3 py-1.5 bg-surface-container-lowest border border-outline-variant rounded-full font-label-sm text-label-sm text-on-surface flex items-center gap-1 hover:border-primary hover:text-primary transition-colors">
+                        Stock: Low Stock First
+                        <span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+</div>
+<div class="ml-auto">
+<button class="text-primary font-label-sm text-label-sm hover:underline">Clear Filters</button>
+</div>
+</div>
+<!-- Product Table -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant bg-surface-container-low/50">
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold w-[60px]">
+<input class="rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">Product</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">Category</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">Price</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">Stock</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-on-surface-variant font-semibold text-right w-[100px]">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant font-body-md text-body-md">
+<!-- Row 1: India Gate Basmati Rice -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded border border-outline-variant bg-surface-container overflow-hidden shrink-0">
+<img alt="India Gate Basmati Rice thumbnail" class="w-full h-full object-cover" data-alt="A premium 5kg bag of India Gate Basmati Rice, high quality studio lighting, crisp white background, modern grocery e-commerce style, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZlVZ3FWiP8BwSM2AFwquodzAzLRe_VhEsbYx8KhSra3TU8MojQKxS-FF-rQh_aGz7l49aA7zZ80dKvFZXqb4kc88qfGarvSNBmPFrJwmt3Q6ZulJn_KWnHT2gSYugN1EBZnquZtrW5kDtYY1vZ5IXf7QErKaOvTrC_F9P-Gd1dD4e12W5EZ2eu-wnueeq9pOT-bGNLvYEUdYa3QwRWrVo0AVmo3xhmEVnZ5T9610PUBR0zWU1Z6MaNg"/>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">India Gate Basmati Rice</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Classic, 5kg</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Grocery &amp; Staples</td>
+<td class="px-6 py-4 font-medium text-on-surface">₹850</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1 font-medium text-on-surface">
+                                        45 kg
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#E6F4EA] text-[#137333] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#137333] mr-1.5"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-primary" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-error" title="Archive">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Low Stock Example -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded border border-outline-variant bg-surface-container overflow-hidden shrink-0">
+<img alt="Aashirvaad Atta thumbnail" class="w-full h-full object-cover" data-alt="A premium 10kg bag of Aashirvaad Whole Wheat Atta, high quality studio lighting, crisp white background, modern grocery e-commerce style, light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXIrWsY1Wb7LJqGZWB4YB7fYTdJDwmFbg2LS-Ylcrk6E-cU0kLPmsNjRDJJx9DBpWopjSwc9D3kltdyIgyQXLQspMrlaU7k2BeBtyAUshfkeRPu8sBIV0p6gB7elYrq-odOVtwfB-46YDtLOPNj65SPhj2x-3Jx-hl17_LyXshThyX425lEhVX3YREZshuhH3OqheJ_ZQW5zE37ajAhM-wohOYog4XhveSIfU64pJJWy6eIhdSANSI9w"/>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface group-hover:text-primary transition-colors">Aashirvaad Whole Wheat Atta</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Premium, 10kg</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Atta, Flours &amp; Sooji</td>
+<td class="px-6 py-4 font-medium text-on-surface">₹480</td>
+<td class="px-6 py-4">
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">5 kg</span>
+<span class="inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-error-container text-on-error-container border border-[#FFB4AB] w-max">
+                                            Low Stock
+                                        </span>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-[#E6F4EA] text-[#137333] font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#137333] mr-1.5"></span>
+                                        Active
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-primary" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-error" title="Archive">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Out of stock example -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-primary-container focus:ring-primary-container" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded border border-outline-variant bg-surface-container overflow-hidden shrink-0 opacity-60">
+<img alt="Organic Honey thumbnail" class="w-full h-full object-cover" data-alt="A jar of premium organic honey, high quality studio lighting, crisp white background, modern grocery e-commerce style, light mode aesthetic, slightly desaturated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnmxpAPM2CG5Z_0FjkICdDU-D3kW3U1XYFSGgP7LldvUQ7m1AdjihDREqVetMmj-asS4HOGz3634RfzXn-D2WiQPyNVcp9qgYmmTxUWcI_DXPtlydAUvZ-_Vi91IjID_mvKWbDD4TwDQxsZec_nToxXEG8cjKiyRRE3qV2xyR1v7iFa0ujCEL7bxprWwyexDPKK5Y2zYx4Jl6-0hiaKbKL_moqGHRnHAeU52aqdqlMW8sznMkDiUFATA"/>
+</div>
+<div>
+<div class="font-label-md text-label-md font-bold text-on-surface-variant">Dabur Organic Honey</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Glass Jar, 500g</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Spreads &amp; Syrups</td>
+<td class="px-6 py-4 font-medium text-on-surface">₹250</td>
+<td class="px-6 py-4">
+<span class="inline-flex px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-surface-variant text-on-surface-variant w-max">
+                                        Out of Stock
+                                    </span>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2 py-1 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant mr-1.5"></span>
+                                        Draft
+                                    </span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-primary" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-error" title="Archive">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+                        Showing <span class="font-semibold text-on-surface">1</span> to <span class="font-semibold text-on-surface">10</span> of <span class="font-semibold text-on-surface">142</span> products
+                    </div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary disabled:opacity-50 disabled:hover:border-outline-variant disabled:hover:text-on-surface-variant" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary-container text-on-primary font-label-sm font-semibold">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:border-primary hover:text-primary font-label-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:border-primary hover:text-primary font-label-sm">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

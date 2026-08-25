@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout - Potdar Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#0038b6",
+                        "primary-container": "#0052ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#e4e5e5",
+                        "surface": "#fbf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "tertiary-container": "#656666",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c3c5d9",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f4f2fd",
+                        "inverse-on-surface": "#f1effa",
+                        "primary": "#003ec7",
+                        "surface-container-high": "#e8e7f1",
+                        "on-primary-fixed": "#001452",
+                        "on-surface-variant": "#434656",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-variant": "#e3e1ec",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "tertiary": "#4c4e4f",
+                        "inverse-surface": "#2f3038",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-container": "#dfe3ff",
+                        "surface-bright": "#fbf8ff",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container": "#eeedf7",
+                        "surface-container-highest": "#e3e1ec",
+                        "on-secondary-container": "#656464",
+                        "outline": "#737688",
+                        "surface-dim": "#dad9e3",
+                        "surface-tint": "#004ced",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#b7c4ff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-background": "#1a1b22",
+                        "on-surface": "#1a1b22",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-container": "#e5e2e1",
+                        "secondary": "#5f5e5e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-md": "16px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit-xl": "48px",
+                        "unit-xs": "4px",
+                        "unit-lg": "24px",
+                        "unit-sm": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom radio button styles to match brand */
+        input[type="radio"]:checked {
+            background-color: #0052ff;
+            border-color: #0052ff;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased">
+<!-- Top Navigation Bar (Checkout is transactional, but usually keeps a simplified header. We'll use the provided one for consistency if it's considered part of the main flow, or a simplified version if not. Given instructions, we suppress standard nav for transactional flows. We'll render a simplified brand header.) -->
+<header class="bg-surface border-b border-outline-variant sticky top-0 z-50 h-20 flex items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<a class="font-display-lg text-headline-md md:text-display-lg font-bold text-primary" href="#">Potdar Store</a>
+<div class="ml-auto text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+<span class="font-label-md text-label-md hidden md:inline">Secure Checkout</span>
+</div>
+</header>
+<!-- Main Checkout Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-unit-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Checkout Stages -->
+<div class="md:col-span-8 flex flex-col gap-unit-xl">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-unit-sm">Checkout</h1>
+<!-- 1. Delivery Address -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-unit-lg shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-between mb-unit-md">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="bg-primary-container text-on-primary rounded-full w-8 h-8 flex items-center justify-center text-label-md">1</span>
+                        Delivery Address
+                    </h2>
+<button class="font-label-md text-label-md text-primary-container hover:underline bg-transparent border-none cursor-pointer">
+                        Add New Address
+                    </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-md mt-unit-md">
+<!-- Active Address Card -->
+<label class="relative block bg-surface border-2 border-[#0052ff] rounded-lg p-unit-md cursor-pointer transition-colors">
+<input checked="" class="absolute top-unit-md right-unit-md text-primary-container focus:ring-primary-container w-5 h-5" name="address" type="radio" value="home"/>
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="home" data-weight="fill">home</span> Home
+                        </div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">John Doe</p>
+<p class="font-body-md text-body-md text-secondary mt-1">123 Market Street, Apt 4B<br/>San Francisco, CA 94105<br/>Phone: (555) 123-4567</p>
+</label>
+<!-- Inactive Address Card -->
+<label class="relative block bg-surface border border-outline-variant hover:border-outline rounded-lg p-unit-md cursor-pointer transition-colors">
+<input class="absolute top-unit-md right-unit-md text-primary-container focus:ring-primary-container w-5 h-5" name="address" type="radio" value="work"/>
+<div class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="work">work</span> Work
+                        </div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">John Doe</p>
+<p class="font-body-md text-body-md text-secondary mt-1">Tech Hub Building, Floor 9<br/>San Francisco, CA 94107<br/>Phone: (555) 987-6543</p>
+</label>
+</div>
+</section>
+<!-- 2. Delivery Slot -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-unit-lg shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="bg-surface-container-high text-on-surface rounded-full w-8 h-8 flex items-center justify-center text-label-md">2</span>
+                        Delivery Time
+                    </h2>
+<button class="font-label-md text-label-md text-primary-container hover:underline bg-transparent border-none cursor-pointer">
+                        Change
+                    </button>
+</div>
+<div class="mt-unit-md flex items-center gap-3 bg-surface-container-low p-unit-md rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary-container" data-icon="schedule">schedule</span>
+<div>
+<p class="font-label-md text-label-md font-semibold text-on-surface">Today · 10:00 AM – 11:00 AM</p>
+<p class="font-body-md text-body-md text-secondary text-sm">Standard Delivery</p>
+</div>
+</div>
+</section>
+<!-- 3. Payment Method -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-lg p-unit-lg shadow-[0px_4px_20px_rgba(0,0,0,0.02)]">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2 mb-unit-md">
+<span class="bg-surface-container-high text-on-surface rounded-full w-8 h-8 flex items-center justify-center text-label-md">3</span>
+                    Payment Method
+                </h2>
+<div class="flex flex-col gap-3 mt-unit-md">
+<!-- UPI -->
+<label class="flex items-center p-unit-md border border-[#0052ff] bg-surface-container-low rounded-lg cursor-pointer transition-colors">
+<input checked="" class="text-primary-container focus:ring-primary-container w-5 h-5 mr-3" name="payment" type="radio" value="upi"/>
+<span class="material-symbols-outlined text-primary-container mr-3" data-icon="qr_code_scanner">qr_code_scanner</span>
+<div class="flex-grow">
+<span class="font-label-md text-label-md font-semibold text-on-surface block">UPI (Google Pay, PhonePe, Paytm)</span>
+</div>
+</label>
+<!-- Card -->
+<label class="flex items-center p-unit-md border border-outline-variant hover:border-outline rounded-lg cursor-pointer transition-colors">
+<input class="text-primary-container focus:ring-primary-container w-5 h-5 mr-3" name="payment" type="radio" value="card"/>
+<span class="material-symbols-outlined text-secondary mr-3" data-icon="credit_card">credit_card</span>
+<div class="flex-grow">
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Credit / Debit Card</span>
+</div>
+</label>
+<!-- COD -->
+<label class="flex items-center p-unit-md border border-outline-variant hover:border-outline rounded-lg cursor-pointer transition-colors">
+<input class="text-primary-container focus:ring-primary-container w-5 h-5 mr-3" name="payment" type="radio" value="cod"/>
+<span class="material-symbols-outlined text-secondary mr-3" data-icon="payments">payments</span>
+<div class="flex-grow">
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Cash on Delivery</span>
+<span class="font-body-md text-body-md text-secondary text-sm">Pay exactly when you receive the order.</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="md:col-span-4 relative">
+<div class="sticky top-[104px] bg-surface-container-lowest border border-outline-variant rounded-lg p-unit-lg shadow-[0px_4px_20px_rgba(0,0,0,0.05)] flex flex-col gap-unit-md">
+<h3 class="font-headline-md text-headline-md border-b border-outline-variant pb-unit-sm">Order Summary</h3>
+<!-- Item Preview -->
+<div class="flex flex-col gap-3 py-unit-sm max-h-48 overflow-y-auto">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-low rounded border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover rounded" data-alt="A small square thumbnail image of a bunch of fresh green organic bananas on a clean white background, brightly lit, high-end grocery aesthetic, modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANqqWAEMd9SnCwUDbNcNFWmnSYJJjCRHokmTvV8BrUMFCr-1idCUKJOQW8Vy6iBFI-V5ohBfPTH0_ZNBYY6pzMYHmkdQvHoofHhZpBJYhFWSCY-7nxPQ-PQuYuAChhe1D-cOVAV8Dswb5WbXMXJESGe4m322NEvG1unLG23nPVYgt87GpNieHPaJhGImRFxPDsm43dcd7_8I0T22HisqLsWyTX556-Fzkc36hcWJzoVfqleSl4DZ5apQ"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Organic Bananas (1kg)</p>
+<p class="font-body-md text-body-md text-secondary text-sm">Qty: 2</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface">₹120</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-low rounded border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover rounded" data-alt="A small square thumbnail image of a loaf of artisanal sourdough bread on a clean white background, brightly lit, high-end grocery aesthetic, modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ7hLGPLiSrnGhwml2_Kn9yT4sMZbfjxGZtLTYxtNq2pgBGrKeTuc24LDR6RFDNhjhD50dQTox0dvOWxScXSt5h1iKHiXqyjTv4U3wCXb6LFC7q_Z5pdrJSSP-ZHRENJqQuiD_RjQTkdlKoaDDUuZfht6SgqzDSlcMJn3-g72LucU4vtTBqnIe3x2qpvTBvGfeUu5Ix0qFWsHtS22m1TVSqn4AXIWBN6zgqNcM6kr-vW5XZWNzR9jmNA"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface line-clamp-1">Artisan Sourdough</p>
+<p class="font-body-md text-body-md text-secondary text-sm">Qty: 1</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface">₹150</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="border-t border-outline-variant pt-unit-md flex flex-col gap-2">
+<div class="flex justify-between font-body-md text-body-md text-secondary">
+<span>Subtotal</span>
+<span>₹270</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-secondary">
+<span>Delivery Fee</span>
+<span>₹40</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-[green]">
+<span>Store Discount</span>
+<span>-₹20</span>
+</div>
+</div>
+<!-- Total -->
+<div class="border-t border-outline-variant pt-unit-md flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-on-surface">Total</span>
+<span class="font-headline-md text-headline-md text-on-surface">₹290</span>
+</div>
+<!-- Action -->
+<button class="w-full bg-[#0052ff] hover:bg-[#003ec7] text-white font-label-md text-label-md py-4 rounded-lg mt-unit-sm transition-colors flex items-center justify-center gap-2">
+                    Place Order <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="font-body-md text-body-md text-secondary text-xs text-center mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified_user">verified_user</span> Payments are secure and encrypted.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer (Standard checkout pages often have simplified footers, using the provided one but hiding nav links for focus) -->
+<footer class="w-full py-unit-xl px-margin-mobile md:px-margin-desktop bg-surface-container border-t border-outline-variant mt-auto">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-unit-md">
+<div class="font-headline-md text-headline-md text-on-surface">Potdar Store</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">
+                © 2024 Potdar Store. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

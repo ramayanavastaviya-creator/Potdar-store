@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Admin - Create New Offer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface-container-high": "#e8e7f1",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "tertiary-container": "#656666",
+                      "outline": "#737688",
+                      "primary": "#003ec7",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#b7c4ff",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#dfe3ff",
+                      "primary-container": "#0052ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e3e1ec",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "tertiary": "#4c4e4f",
+                      "primary-fixed": "#dde1ff",
+                      "surface-dim": "#dad9e3",
+                      "surface-container-low": "#f4f2fd",
+                      "surface-variant": "#e3e1ec",
+                      "secondary-container": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "surface-bright": "#fbf8ff",
+                      "inverse-on-surface": "#f1effa",
+                      "on-error": "#ffffff",
+                      "surface-container": "#eeedf7",
+                      "on-primary-fixed": "#001452",
+                      "on-tertiary-container": "#e4e5e5",
+                      "primary-fixed-dim": "#b7c4ff",
+                      "secondary": "#5f5e5e",
+                      "on-surface-variant": "#434656",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "background": "#fbf8ff",
+                      "inverse-surface": "#2f3038",
+                      "on-surface": "#1a1b22",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#0038b6",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface": "#fbf8ff",
+                      "secondary-fixed": "#e5e2e1",
+                      "outline-variant": "#c3c5d9",
+                      "on-background": "#1a1b22",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#004ced",
+                      "on-secondary-container": "#656464",
+                      "on-error-container": "#93000a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-xl": "48px",
+                      "unit-lg": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "unit-md": "16px",
+                      "unit-xs": "4px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "unit-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          .form-input {
+              border: 1px solid #E4E4E7;
+              padding-left: 16px;
+              padding-right: 16px;
+              transition: border-color 0.2s ease;
+          }
+          .form-input:focus {
+              outline: none;
+              border: 2px solid #0052FF;
+              border-color: #0052FF !important;
+              box-shadow: none !important;
+          }
+          .section-card {
+              border: 1px solid #E4E4E7;
+              background-color: #ffffff;
+              border-radius: 0.5rem;
+          }
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col z-50 fixed left-0 top-0 h-full w-64 border-r border-outline-variant bg-surface-container-lowest dark:bg-inverse-surface">
+<div class="px-6 py-8 border-b border-outline-variant dark:border-outline">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">Potdar Store</h1>
+<p class="text-on-surface-variant font-body-md text-[14px]">Management Portal</p>
+</div>
+<div class="flex-1 overflow-y-auto py-4">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-md text-label-md">Orders</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Products</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+<span class="font-label-md text-label-md">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="warehouse">warehouse</span>
+<span class="font-label-md text-label-md">Inventory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Customers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-primary dark:text-primary-fixed font-bold border-r-4 border-primary dark:border-primary-fixed bg-surface-container-low dark:bg-secondary-container opacity-90 scale-[0.99] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-label-md text-label-md">Offers</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed hover:bg-surface-container dark:hover:bg-on-secondary-fixed transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="p-4 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small circular avatar placeholder image for the Admin User Profile, displaying a minimal professional headshot on a neutral light grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIbh84BRSTt481CjCpfy3_hpof7sktjxvVg24Z9Q9rQCDZp_1NEMca9buewK9P3iDvHTsnnUS7F6F3HDWJ6DoFXKBaibYplXBAfzRFoYoPqrgx7jU3K4u4rPvYgTvvrBZ7UX1BDzr8GHmuWl8jQlaOtzIEujyIJFTB8G_FDPFDafHF7FCI7CN2_9M-sF632BMTnfo4dbT3ZVCBs0NG5fds7UNyksWxUdr8kZCpqiJ73MM599uvNfpoYQ"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Admin User</span>
+<span class="text-xs text-on-surface-variant">Admin</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-64 w-full h-full overflow-hidden">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center h-16 px-gutter border-b border-outline-variant bg-surface dark:bg-surface-dim z-40 w-full shrink-0">
+<div class="flex items-center">
+<span class="font-headline-md text-headline-md font-black text-on-surface md:hidden">Potdar Store Admin</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="form-input rounded-full py-2 pl-10 pr-4 w-64 bg-surface-container-lowest text-label-md border-outline-variant focus:border-primary" placeholder="Search..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:scale-95 duration-100 hidden sm:block">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors hover:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop bg-surface-container-lowest">
+<div class="max-w-4xl mx-auto">
+<div class="mb-unit-lg flex justify-between items-end">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Create New Offer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure a new promotional campaign.</p>
+</div>
+</div>
+<form class="space-y-unit-lg pb-unit-xl">
+<!-- Section 1: Basic Info -->
+<div class="section-card p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant pb-4">1. Basic Info</h3>
+<div class="grid grid-cols-1 gap-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="offerName">Offer Name</label>
+<input class="form-input w-full rounded py-3 text-body-md" id="offerName" placeholder="e.g. Summer Sale 20% Off" type="text"/>
+<p class="text-xs text-on-surface-variant mt-1">This name is visible to customers.</p>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="internalDesc">Internal Description</label>
+<textarea class="form-input w-full rounded py-3 text-body-md resize-none" id="internalDesc" placeholder="Notes for staff (optional)" rows="3"></textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Offer Type -->
+<div class="section-card p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline-variant pb-4">2. Offer Type</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded cursor-pointer hover:border-primary transition-colors">
+<input checked="" class="mt-1 text-primary focus:ring-primary border-outline-variant" name="offerType" type="radio"/>
+<div>
+<span class="block font-label-md text-label-md font-bold text-on-surface">Product Discount</span>
+<span class="text-xs text-on-surface-variant">Discount specific items.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded cursor-pointer hover:border-primary transition-colors">
+<input class="mt-1 text-primary focus:ring-primary border-outline-variant" name="offerType" type="radio"/>
+<div>
+<span class="block font-label-md text-label-md font-bold text-on-surface">Coupon Code</span>
+<span class="text-xs text-on-surface-variant">Requires a code at checkout.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-4 border border-outline-variant rounded cursor-pointer hover:border-primary transition-colors">
+<input class="mt-1 text-primary focus:ring-primary border-outline-variant" name="offerType" type="radio"/>
+<div>
+<span class="block font-label-md text-label-md font-bold text-on-surface">Minimum Cart</span>
+<span class="text-xs text-on-surface-variant">Discount based on total value.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-end gap-4 pt-4 border-t border-outline-variant">
+<button class="px-6 py-3 rounded border border-outline-variant bg-surface-container-lowest text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">
+                            Save as Draft
+                        </button>
+<button class="px-6 py-3 rounded bg-[#0052FF] text-white font-label-md text-label-md hover:bg-primary transition-colors" type="submit">
+                            Publish Offer
+                        </button>
+</div>
+</form>
+</div>
+</main>
+</div>
+</body></html>

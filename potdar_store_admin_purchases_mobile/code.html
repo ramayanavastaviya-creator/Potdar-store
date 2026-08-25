@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Purchases - Mobile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#dae2fd",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#0052ff",
+                        "background": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-container": "#d6e6ff",
+                        "inverse-primary": "#b7c4ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "primary": "#003ec7",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#004ced",
+                        "outline-variant": "#c3c5d9",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "outline": "#737688",
+                        "inverse-on-surface": "#eff1f3",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#dfe3ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-primary-fixed": "#001452",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#565e74",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed": "#dae2fd",
+                        "on-surface-variant": "#434656",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-fixed": "#131b2e",
+                        "tertiary": "#3f4f65",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#57677e"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        margin: "16px",
+                        lg: "24px",
+                        base: "8px",
+                        xs: "4px",
+                        md: "16px",
+                        xl: "32px",
+                        sm: "8px",
+                        gutter: "16px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "label-sm": ["11px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "700" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "700" }],
+                        "display-lg": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-sm": ["16px", { lineHeight: "24px", fontWeight: "600" }],
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-md": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }],
+                        "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ghost-border { border: 1px solid #E2E8F0; }
+        .dark .ghost-border { border: 1px solid #3f465c; } /* Adjust for dark mode */
+        .ambient-shadow { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background dark:bg-inverse-surface text-on-surface dark:text-inverse-on-surface font-body-md min-h-screen flex flex-col pt-16 pb-20 md:hidden">
+<!-- TopAppBar -->
+<div class="fixed top-0 left-0 w-full h-16 bg-surface-container-lowest dark:bg-inverse-surface flex justify-between items-center px-lg z-50 border-b border-outline-variant dark:border-outline">
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-on-surface-variant">Potdar Store Admin</h1>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant cursor-pointer transition-all duration-150 hover:bg-surface-container-high dark:hover:bg-surface-container-highest p-2 rounded-full">search</span>
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant cursor-pointer transition-all duration-150 hover:bg-surface-container-high dark:hover:bg-surface-container-highest p-2 rounded-full">notifications</span>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar of a professional administrator, neutral background, sharp focus, corporate aesthetic, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB_4n2RFygJlkVV55MF0eWyOKpxfr4qcS8rmDq2AqAwJxYCGiJGMKQ6USBa1BymsjKeKTj7_aJOZzuqu65hvhCZ9Nu1mwDWXY_2o1w-QIQGkMT7hDKZX8dc-yHF2r9fa3ec5LdmkQ3DQ2uXIQQ-lwqJ0EufkT3H9j9Zdp3i26s-3-Y-2q69pbHRieZfeFkHbV7nV3q-R6EJSskGVO8Qw4uBNeLUFNAJ5VuV4875dTzv6boOzwXlR3k5g"/>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow p-margin overflow-y-auto">
+<div class="flex justify-between items-center mb-md">
+<h2 class="font-headline-md text-headline-md font-bold">Purchase Orders</h2>
+<button class="flex items-center gap-2 text-primary font-label-md bg-surface-container py-2 px-3 rounded" id="filterBtn">
+<span class="material-symbols-outlined text-[18px]">tune</span> Filter
+            </button>
+</div>
+<!-- PO List (Compact Cards) -->
+<div class="flex flex-col gap-sm">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest dark:bg-surface-container-highest p-md rounded-lg ghost-border ambient-shadow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">PO-2023-084</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold mt-1">TechCorp Solutions</h3>
+</div>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-1 rounded">Pending</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Total</span>
+<span class="font-body-md text-body-md font-semibold">$12,450.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 24, 2023</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest dark:bg-surface-container-highest p-md rounded-lg ghost-border ambient-shadow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">PO-2023-083</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold mt-1">Global Logistics Ltd</h3>
+</div>
+<span class="bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded">Approved</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Total</span>
+<span class="font-body-md text-body-md font-semibold">$3,200.50</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 22, 2023</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest dark:bg-surface-container-highest p-md rounded-lg ghost-border ambient-shadow">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary">PO-2023-082</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold mt-1">Office Supplies Inc</h3>
+</div>
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded">Delivered</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary">Total</span>
+<span class="font-body-md text-body-md font-semibold">$450.00</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary">Oct 20, 2023</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-margin w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors z-40">
+<span class="material-symbols-outlined">add</span>
+</button>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<div class="fixed bottom-0 left-0 w-full h-16 bg-surface-container-lowest dark:bg-inverse-surface flex justify-around items-center border-t border-outline-variant dark:border-outline z-50">
+<div class="flex flex-col items-center justify-center w-1/4 h-full cursor-pointer text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-[10px]">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center w-1/4 h-full cursor-pointer text-primary dark:text-primary-fixed font-bold">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+<span class="font-label-sm text-[10px]">Purchase Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center w-1/4 h-full cursor-pointer text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed">
+<span class="material-symbols-outlined mb-1">inventory_2</span>
+<span class="font-label-sm text-[10px]">Goods Receiving</span>
+</div>
+<div class="flex flex-col items-center justify-center w-1/4 h-full cursor-pointer text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed">
+<span class="material-symbols-outlined mb-1">menu</span>
+<span class="font-label-sm text-[10px]">More</span>
+</div>
+</div>
+<!-- Bottom Sheet for Filter & Sort (Hidden by default) -->
+<div class="fixed inset-0 bg-on-surface/50 z-[60] hidden opacity-0 transition-opacity duration-300" id="filterSheetOverlay">
+<div class="absolute bottom-0 left-0 w-full bg-surface-container-lowest dark:bg-inverse-surface rounded-t-xl transform translate-y-full transition-transform duration-300 p-margin" id="filterSheet">
+<div class="w-12 h-1 bg-outline-variant dark:bg-outline rounded-full mx-auto mb-md"></div>
+<h3 class="font-headline-sm text-headline-sm font-bold mb-md">Filter &amp; Sort</h3>
+<div class="mb-md">
+<label class="font-label-md text-label-md text-secondary block mb-2">Status</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md">All</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-md text-label-md text-secondary">Pending</span>
+<span class="bg-surface-container px-3 py-1 rounded-full font-label-md text-label-md text-secondary">Approved</span>
+</div>
+</div>
+<div class="mb-lg">
+<label class="font-label-md text-label-md text-secondary block mb-2">Sort By</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded p-2 font-body-md text-body-md focus:outline-none focus:border-primary">
+<option>Date (Newest First)</option>
+<option>Date (Oldest First)</option>
+<option>Total Amount (High to Low)</option>
+</select>
+</div>
+<div class="flex gap-4">
+<button class="flex-1 bg-surface-container-lowest border border-outline-variant text-on-surface py-2 rounded font-label-md text-label-md" id="closeFilterBtn">Clear</button>
+<button class="flex-1 bg-primary text-on-primary py-2 rounded font-label-md text-label-md">Apply</button>
+</div>
+</div>
+</div>
+<script>
+        const filterBtn = document.getElementById('filterBtn');
+        const filterSheetOverlay = document.getElementById('filterSheetOverlay');
+        const filterSheet = document.getElementById('filterSheet');
+        const closeFilterBtn = document.getElementById('closeFilterBtn');
+
+        function openSheet() {
+            filterSheetOverlay.classList.remove('hidden');
+            // Small delay to allow display block to apply before animating opacity/transform
+            setTimeout(() => {
+                filterSheetOverlay.classList.remove('opacity-0');
+                filterSheet.classList.remove('translate-y-full');
+            }, 10);
+        }
+
+        function closeSheet() {
+            filterSheetOverlay.classList.add('opacity-0');
+            filterSheet.classList.add('translate-y-full');
+            setTimeout(() => {
+                filterSheetOverlay.classList.add('hidden');
+            }, 300);
+        }
+
+        filterBtn.addEventListener('click', openSheet);
+        closeFilterBtn.addEventListener('click', closeSheet);
+        filterSheetOverlay.addEventListener('click', (e) => {
+            if(e.target === filterSheetOverlay) closeSheet();
+        });
+    </script>
+</body></html>

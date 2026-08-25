@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Potdar Store Support</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "tertiary": "#4c4e4f",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c3c5d9",
+                        "on-secondary-fixed-variant": "#474646",
+                        "on-surface-variant": "#434656",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-dim": "#dad9e3",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary-container": "#e4e5e5",
+                        "on-primary-fixed-variant": "#0038b6",
+                        "tertiary-container": "#656666",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-low": "#f4f2fd",
+                        "inverse-primary": "#b7c4ff",
+                        "surface-variant": "#e3e1ec",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf8ff",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "background": "#fbf8ff",
+                        "surface-container-highest": "#e3e1ec",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#737688",
+                        "on-surface": "#1a1b22",
+                        "surface": "#fbf8ff",
+                        "primary": "#003ec7",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#f1effa",
+                        "secondary-container": "#e5e2e1",
+                        "surface-container": "#eeedf7",
+                        "surface-container-high": "#e8e7f1",
+                        "secondary": "#5f5e5e",
+                        "on-primary-fixed": "#001452",
+                        "surface-tint": "#004ced",
+                        "inverse-surface": "#2f3038",
+                        "on-primary-container": "#dfe3ff",
+                        "on-background": "#1a1b22",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "primary-container": "#0052ff",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary-container": "#656464"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit-xl": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit-md": "16px",
+                        "unit-xs": "4px",
+                        "unit-sm": "8px",
+                        "margin-mobile": "20px",
+                        "unit-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<!-- Suppressed SideNav and TopNav due to transactional nature of the page -->
+<!-- Content Canvas -->
+<div class="max-w-4xl w-full mx-auto">
+<div class="mb-unit-xl text-center md:text-left flex flex-col md:flex-row md:items-end justify-between gap-unit-md">
+<div>
+<a class="inline-flex items-center text-on-surface-variant hover:text-primary transition-colors mb-unit-sm group" href="#">
+<span class="material-symbols-outlined mr-2 group-hover:-translate-x-1 transition-transform" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-md text-label-md">Back to Orders</span>
+</a>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Need help with order #PDS-2026-000184?</h1>
+</div>
+<div class="text-on-surface-variant font-body-md text-body-md bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/30 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="support_agent">support_agent</span>
+<span>We typically reply within 2 hours</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Form Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl border border-outline-variant p-6 sm:p-8">
+<form action="#" class="space-y-unit-lg" method="POST">
+<!-- Issue Type -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-unit-sm" for="issue-type">What seems to be the issue?</label>
+<div class="relative">
+<select class="block w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest py-3 pl-4 pr-10 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container transition-colors appearance-none" id="issue-type" name="issue-type">
+<option disabled="" selected="" value="">Select a reason...</option>
+<option value="not_received">Order not received</option>
+<option value="wrong_item">Wrong item delivered</option>
+<option value="damaged">Damaged or defective item</option>
+<option value="missing">Missing items in order</option>
+<option value="other">Other</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-4">
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-unit-sm" for="description">Tell us more about the issue</label>
+<div class="mt-1">
+<textarea class="block w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest py-3 px-4 font-body-md text-body-md text-on-surface focus:border-primary-container focus:outline-none focus:ring-1 focus:ring-primary-container transition-colors resize-none placeholder-outline" id="description" name="description" placeholder="Please provide details..." rows="4"></textarea>
+</div>
+<p class="mt-2 font-label-sm text-label-sm text-outline">Briefly describe what happened so we can assist you better.</p>
+</div>
+<!-- File Upload -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-unit-sm">Attach Photos (Optional)</label>
+<div class="mt-1 flex justify-center rounded-lg border border-dashed border-outline-variant px-6 py-8 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary transition-colors mb-2" data-icon="add_a_photo">add_a_photo</span>
+<div class="mt-4 flex text-sm leading-6 text-on-surface justify-center">
+<span class="relative cursor-pointer rounded-md bg-transparent font-label-md text-primary hover:text-primary-container focus-within:outline-none">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</span>
+<p class="pl-1 text-on-surface-variant">or drag and drop</p>
+</div>
+<p class="text-xs leading-5 text-outline mt-1">PNG, JPG up to 10MB</p>
+</div>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-4 flex justify-end">
+<button class="bg-surface-container-lowest border border-outline-variant text-on-surface px-6 py-3 rounded-DEFAULT font-label-md text-label-md hover:bg-surface-container-low transition-colors mr-3" type="button">Cancel</button>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-DEFAULT font-label-md text-label-md hover:bg-primary-fixed-variant transition-colors shadow-sm inline-flex items-center gap-2" type="submit">
+<span>Submit Request</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Order Context Card -->
+<div class="md:col-span-4 space-y-6">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-headline-md text-headline-md text-on-surface">Order Summary</h3>
+</div>
+<div class="p-6 space-y-4">
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface-variant">Order Number</div>
+<div class="font-body-md text-body-md text-on-surface font-medium">#PDS-2026-000184</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface-variant">Date Placed</div>
+<div class="font-body-md text-body-md text-on-surface">Oct 24, 2023</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface-variant">Total Amount</div>
+<div class="font-body-md text-body-md text-on-surface font-medium">$142.50</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="font-label-md text-label-md text-on-surface-variant">Status</div>
+<div class="inline-flex items-center rounded-full bg-surface-container-high px-2.5 py-0.5 font-label-sm text-label-sm text-on-surface">
+                                Delivered
+                            </div>
+</div>
+<hr class="border-outline-variant my-4"/>
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-3">Items in Order</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="h-12 w-12 flex-shrink-0 rounded bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A macro shot of a fresh, bright green organic avocado cut in half, revealing a clean pit. The avocado rests on a pristine white marble countertop. The lighting is soft, natural, and bright, creating a clean, modern, and high-end organic grocery aesthetic. Minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0xl8Iyh1kELEWwxTzxG5IXJe_72WMvkHnqLWvxycy5XcPA5TdbLIkuu0-2LRgvad0-ko3Y9aGW6CXpcK_2YIQyhaxCWQDphsmvqoH6nStWrhD5JSUtCNyF-7etMVIoYBMDYKqAL8Iftt3bzNLvPcuAZ57NGzg4L0rDzKY0Ak_1w6zeVTKUeXi5AFn_Z7mOVznwek4RU7QyVGruXUJLKrofWm2Y_6vs1b99rrLsoa8icxuBEdkIStSpA"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Organic Hass Avocados</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Qty: 4</p>
+</div>
+</div>
+<div class="flex items-center gap-3 mb-3">
+<div class="h-12 w-12 flex-shrink-0 rounded bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center overflow-hidden">
+<img class="object-cover w-full h-full" data-alt="A beautifully crafted artisanal sourdough bread loaf, with a deeply caramelized, crusty exterior and distinct scoring patterns. It sits on a simple wooden cutting board against a seamless light gray background. The lighting is warm and directional, emphasizing the texture of the crust. Premium bakery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5zldh_LiACL6PQeBx4D9GA0PY5zEw_Tu-CHzNhshSHhyfsvk3YhNNdDYElxieQTZBF3szH_a-fczYJASPL4fwKIHOIlubdCW9-CkuOEic_NEZsAaCFXihgFc1P3iQJptussqnp06N7rSOphU4VDZCzw3lDVrJYhKS0z1kEjiAQwO91cbWZ801ENw5r-VSrma4yE25mo1umlMbKs8_xeAciQO9asJMInJV0rAdrsDzJEFHzEACwCiiHg"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Artisan Sourdough Loaf</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Qty: 1</p>
+</div>
+</div>
+<div class="text-center mt-2">
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors inline-flex items-center" href="#">
+                                    View full order details <span class="material-symbols-outlined text-[16px] ml-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
